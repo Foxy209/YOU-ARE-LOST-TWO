@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEditor;
-public class NewMonoBehaviourScript : MonoBehaviour
+public class Menu : MonoBehaviour
 {
     public void Ext()
     {
