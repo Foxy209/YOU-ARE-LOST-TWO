@@ -1,0 +1,2 @@
+
+![2024-06-20_21-55-12](https://github.com/Foxy209/YOU-ARE-LOST-TWO/assets/157419344/841bd32d-2e52-419e-b861-7844db530456)
