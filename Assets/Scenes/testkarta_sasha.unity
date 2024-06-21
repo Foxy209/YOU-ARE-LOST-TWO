@@ -406,6 +406,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 173486594114828146, guid: 18fbb15e08e14304bb5a880fa3b01210,
+        type: 3}
+      propertyPath: field of view
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 1206733410533720647, guid: 18fbb15e08e14304bb5a880fa3b01210,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -479,22 +484,22 @@ PrefabInstance:
     - target: {fileID: 2806742808693212295, guid: 18fbb15e08e14304bb5a880fa3b01210,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.969641
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2806742808693212295, guid: 18fbb15e08e14304bb5a880fa3b01210,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.051207602
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2806742808693212295, guid: 18fbb15e08e14304bb5a880fa3b01210,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.23877844
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2806742808693212295, guid: 18fbb15e08e14304bb5a880fa3b01210,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.012610101
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2806742808693212295, guid: 18fbb15e08e14304bb5a880fa3b01210,
         type: 3}
@@ -515,6 +520,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Intensity
       value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268708927158889974, guid: 18fbb15e08e14304bb5a880fa3b01210,
+        type: 3}
+      propertyPath: m_Antialiasing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268708927158889974, guid: 18fbb15e08e14304bb5a880fa3b01210,
+        type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7780767018789918487, guid: 18fbb15e08e14304bb5a880fa3b01210,
+        type: 3}
+      propertyPath: Lens.FieldOfView
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
