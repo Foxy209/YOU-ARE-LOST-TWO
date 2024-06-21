@@ -3,12 +3,77 @@ guid: b3848e52f6fe3de4691ce57b905cde8d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: air conditioning
+    second: {fileID: 2100000, guid: 3e1e620c568b3bb4d8d2cd76f42509e2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: asphalt
+    second: {fileID: 2100000, guid: 3111d69566a1f3b4daa41faefde0a42d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: doors-WindowsFrame
+    second: {fileID: 2100000, guid: ab56f3ba9b812a8499a813f9cd85b2e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: eletricBox
+    second: {fileID: 2100000, guid: a4c3768e7b5f0d548b01f87b4740ea21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: externalLight
+    second: {fileID: 2100000, guid: e4c8add6a92ee2140a07fec2d0ae19da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: facadeGlass
+    second: {fileID: 2100000, guid: 78729eb23dcbcb64bb90cf2c72f6bc16, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor
+    second: {fileID: 2100000, guid: bc1e4ab9b67958d4faa0c4557aa03988, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gasStation-1
+    second: {fileID: 2100000, guid: bbd817d61b913494caa0252418561eb1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gasStation-Convenience
+    second: {fileID: 2100000, guid: 03453b97b71a6504dbc0a35751f8e4fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: industrialDoor
+    second: {fileID: 2100000, guid: d838dccfd21121542a2c379b4964c7e1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sign
+    second: {fileID: 2100000, guid: 37dce27962af54942963d452d450f15c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: squareLight
+    second: {fileID: 2100000, guid: e5726df23a2dbad42a1736c9ab428acc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: vents
+    second: {fileID: 2100000, guid: 5319f9df3ff2d7c4ca1b208c29f8f35c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
