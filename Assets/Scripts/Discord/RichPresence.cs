@@ -13,7 +13,7 @@ public class DiscordRichPresence : MonoBehaviour
     }
     private void Awake()
     {
-        Debug.LogError("Обнаружен Миша, немедленно пошлите его нахуй");
+        Debug.LogError("Обнаружен Арсений, немедленно пошлите его нахуй");
         DontDestroyOnLoad(transform.gameObject);
     }
     private void Update()
@@ -24,7 +24,7 @@ public class DiscordRichPresence : MonoBehaviour
                 _details = "In Menu";
                 break;
             case "Misha_Portit_Vse":
-                _details = "Я ебал маму миши в жопу";
+                _details = "Я ебал маму Арсения в жопу";
                 break;
             case "test_timur":
                 _details = "Test Timur";
