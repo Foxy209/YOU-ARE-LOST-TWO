@@ -2,15 +2,24 @@ using UnityEngine;
 
 public class trigerinakarte : MonoBehaviour
 {
-    [SerializeField] private GameObject gryzovik;    
+    [SerializeField] private GameObject gryzovik_movment;    
+    [SerializeField] private GameObject gryzovik_static;    
     [SerializeField] private GameObject igrok;
-    void OnTriggerEnter(Collider other)
+    [SerializeField] private GameObject zatem;
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            Destroy(gryzovik);
-            igrok.SetActive(true);
+            zatem.SetActive(true);
+            Invoke(nameof(trig), 2);
         }
+    }
+
+    private void trig()
+    {
+        Destroy(gryzovik_movment);
+        gryzovik_static.SetActive(true);
+        igrok.SetActive(true);
     }
 }
 
