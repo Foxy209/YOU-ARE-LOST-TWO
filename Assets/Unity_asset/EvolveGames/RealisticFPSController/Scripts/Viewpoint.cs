@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 namespace EvolveGames
 {
     public class Viewpoint : MonoBehaviour
@@ -15,17 +13,18 @@ namespace EvolveGames
         [Space ,SerializeField, Range(0.1f, 20)] float MaxViewRange = 8;
         [SerializeField, Range(0.1f, 20)] float MaxTextViewRange = 3;
         float Distance;
-        Text ImageText;
+        TMP_Text ImageText;
         Image ImageUI;
         void Start()
         {
-            ImageUI = Instantiate(ImagePrefab, FindObjectOfType<Canvas>().transform).GetComponent<Image>();
-            ImageText = ImageUI.GetComponentInChildren<Text>();
+            ImageUI = Instantiate(ImagePrefab, FindFirstObjectByType<Canvas>().transform).GetComponent<Image>();
+            ImageUI.transform.localPosition = Vector3.zero;
+            ImageText = ImageUI.GetComponentInChildren<TMP_Text>();
             ImageText.text = PointText;
         }
         void Update()
         {
-            ImageUI.transform.position = cam.WorldToScreenPoint(calculateWorldPosition(transform.position, cam));
+            //ImageUI.transform.position = cam.WorldToScreenPoint(calculateWorldPosition(transform.position, cam));
             Distance = Vector3.Distance(PlayerController.transform.position, transform.position);
 
             if(Distance < MaxTextViewRange)
