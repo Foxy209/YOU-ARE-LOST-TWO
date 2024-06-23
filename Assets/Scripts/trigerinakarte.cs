@@ -6,12 +6,13 @@ public class trigerinakarte : MonoBehaviour
     [SerializeField] private GameObject gryzovik_static;    
     [SerializeField] private GameObject igrok;
     [SerializeField] private GameObject zatem;
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             zatem.SetActive(true);
-            Invoke(nameof(trig), 2);
+            Invoke(nameof(trig), 1);
         }
     }
 
