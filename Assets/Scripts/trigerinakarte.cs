@@ -11,7 +11,7 @@ public class trigerinakarte : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            zatem.SetActive(true);
+            zatem.GetComponent<Animator>().CrossFade("zatemnenie",0,0);
             Invoke(nameof(trig), 1);
         }
     }
