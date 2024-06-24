@@ -626,8 +626,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.51417303
-  MaxDistance: 500
+  MinDistance: 0.5
+  MaxDistance: 2
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -662,7 +662,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -677,7 +677,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.1388889
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1131,6 +1131,7 @@ GameObject:
   - component: {fileID: 9131536966469935390}
   - component: {fileID: 1905639253670244029}
   - component: {fileID: 3667936385661855462}
+  - component: {fileID: 4359158792586638902}
   m_Layer: 0
   m_Name: car
   m_TagString: Untagged
@@ -1285,7 +1286,7 @@ MonoBehaviour:
   Car_Speed_In_KPH: 0
   Car_Speed_In_MPH: 0
   currSpeed: 0
-  minuscar: {fileID: 0}
+  minuscar: {fileID: 67414822058744189}
 --- !u!54 &3667936385661855462
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1313,6 +1314,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &4359158792586638902
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3430639002133329819}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4, y: 1, z: 0.03}
+  m_Center: {x: 0.0175, y: 0, z: 4.655}
 --- !u!1 &3664554315898336266
 GameObject:
   m_ObjectHideFlags: 0
