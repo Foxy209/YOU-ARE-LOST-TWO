@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 public class trigger_enter_zapravka : MonoBehaviour
 {
     [SerializeField] private GameObject trigg;
@@ -12,12 +13,14 @@ public class trigger_enter_zapravka : MonoBehaviour
         if (other.CompareTag("GameController"))
         {
             zatemn.GetComponent<Animator>().CrossFade("zatemnenie",0,0);
-            Invoke(nameof(trig), 1);
+            StartCoroutine(trig(other.gameObject));
         }
     }
-    private void trig()
+    private IEnumerator trig(GameObject plr)
     {
-        player.transform.position = spawn.transform.position;
+        yield return new WaitForSeconds(1);
+        while (plr.transform.position != spawn.transform.position)
+            plr.transform.position = spawn.transform.position;
         Destroy(trigg);
     }
 }
