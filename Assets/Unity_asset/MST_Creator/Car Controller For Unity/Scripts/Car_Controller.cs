@@ -585,4 +585,32 @@ public class Car_Controller : MonoBehaviour
             }
         }
     }
+    
+    [SerializeField] private AudioSource minuscar;
+    void OnTriggerEnter(Collider other) //плохая концовка
+    {
+        if(other.CompareTag("Player"))
+        {
+            StartCoroutine(SmoothStop());
+            minuscar.Play();
+        }
+    }
+
+    IEnumerator SmoothStop()
+    {
+        while(Car_Speed_KPH > 0)
+        {
+            Brakes += Time.deltaTime * BrakeForce * 20;
+            foreach(WheelCollider Wheel in Front_Wheels)
+            {
+                Wheel.brakeTorque = Brakes;
+            }
+            foreach(WheelCollider Wheel in Back_Wheels)
+            {
+                Wheel.brakeTorque = Brakes;
+            }
+            yield return null;
+        }
+        Brakes = 0f;
+    }
 }
