@@ -18,7 +18,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.04
+  m_FogDensity: 0.015
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
@@ -7138,6 +7138,16 @@ PrefabInstance:
       propertyPath: m_LightProbeUsage
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3250130192195140554, guid: 0099c4d271b866146a5f328071e9165c,
+        type: 3}
+      propertyPath: spawn
+      value: 
+      objectReference: {fileID: 550687544}
+    - target: {fileID: 3250130192195140554, guid: 0099c4d271b866146a5f328071e9165c,
+        type: 3}
+      propertyPath: zatemn
+      value: 
+      objectReference: {fileID: 780886628}
     - target: {fileID: 3252967751034750524, guid: 0099c4d271b866146a5f328071e9165c,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -20595,6 +20605,37 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6780019229138369780, guid: d1c47cdd64bb1434594b25717506bb2e, type: 3}
+--- !u!1 &550687543
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 550687544}
+  m_Layer: 0
+  m_Name: spawn (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &550687544
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550687543}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 1.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1443578866}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &551066013 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7563705406106026960, guid: d1c47cdd64bb1434594b25717506bb2e,
@@ -24238,6 +24279,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 287750492}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: b3848e52f6fe3de4691ce57b905cde8d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 550687544}
     - targetCorrespondingSourceObject: {fileID: 8849344000729751805, guid: b3848e52f6fe3de4691ce57b905cde8d,
         type: 3}
       insertIndex: -1
@@ -24571,7 +24616,7 @@ PrefabInstance:
     - target: {fileID: 173486594114828146, guid: 18fbb15e08e14304bb5a880fa3b01210,
         type: 3}
       propertyPath: far clip plane
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 192020382970966098, guid: 18fbb15e08e14304bb5a880fa3b01210,
         type: 3}
@@ -28467,7 +28512,7 @@ PrefabInstance:
     - target: {fileID: 4582019824381016673, guid: a01c7516e659bdf4b9897ab54df69b69,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4582019824381016678, guid: a01c7516e659bdf4b9897ab54df69b69,
         type: 3}
