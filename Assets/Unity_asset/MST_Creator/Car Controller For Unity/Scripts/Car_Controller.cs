@@ -122,6 +122,8 @@ public class Car_Controller : MonoBehaviour
     public int Car_Speed_In_KPH; //Car speed in KPH (integer form)
     public int Car_Speed_In_MPH; //Car speed in MPH (integer form)
 
+    [SerializeField] private GameObject svintys;
+
     public bool Is_Flying () //bool for if the car is flying or not
 	{
 		if (!Back_Wheels[0].isGrounded && !Front_Wheels[0].isGrounded) {
@@ -593,6 +595,7 @@ public class Car_Controller : MonoBehaviour
         {
             StartCoroutine(SmoothStop());
             minuscar.Play();
+            svintys.SetActive(true);
         }
     }
 
