@@ -7140,6 +7140,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3250130192195140554, guid: 0099c4d271b866146a5f328071e9165c,
         type: 3}
+      propertyPath: clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 32c4782d90744bc40b19eb5e71cc5467, type: 3}
+    - target: {fileID: 3250130192195140554, guid: 0099c4d271b866146a5f328071e9165c,
+        type: 3}
+      propertyPath: sour
+      value: 
+      objectReference: {fileID: 1671116411}
+    - target: {fileID: 3250130192195140554, guid: 0099c4d271b866146a5f328071e9165c,
+        type: 3}
       propertyPath: spawn
       value: 
       objectReference: {fileID: 550687544}
@@ -7148,6 +7158,11 @@ PrefabInstance:
       propertyPath: zatemn
       value: 
       objectReference: {fileID: 780886628}
+    - target: {fileID: 3250130192195140554, guid: 0099c4d271b866146a5f328071e9165c,
+        type: 3}
+      propertyPath: DoYouNeedToChangeClip
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3252967751034750524, guid: 0099c4d271b866146a5f328071e9165c,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -38540,6 +38555,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6444484319350841185, guid: b3848e52f6fe3de4691ce57b905cde8d, type: 3}
+--- !u!82 &1671116411 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2558611579314765849, guid: a01c7516e659bdf4b9897ab54df69b69,
+    type: 3}
+  m_PrefabInstance: {fileID: 1152284663}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1671126851 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7481043662917974649, guid: b3848e52f6fe3de4691ce57b905cde8d,
@@ -40508,6 +40529,9 @@ MonoBehaviour:
   trigg: {fileID: 1840973379}
   spawn: {fileID: 1155777700}
   zatemn: {fileID: 780886628}
+  DoYouNeedToChangeClip: 1
+  clip: {fileID: 8300000, guid: 54f6b24b39153d444953a9cd006f032e, type: 3}
+  sour: {fileID: 1671116411}
 --- !u!43 &1841306771
 Mesh:
   m_ObjectHideFlags: 0
