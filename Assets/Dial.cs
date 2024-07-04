@@ -43,7 +43,7 @@ public class Dial : MonoBehaviour
                 dialtxt.text += a; 
                 yield return new WaitForSeconds(0.1f);
             }
-            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
+            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
             aud.PlayOneShot(btnsnd);
         }
         disapr.color = new Color(0,0,0,1);
