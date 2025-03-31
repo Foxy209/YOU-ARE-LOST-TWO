@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using TMPro;
-using System.Linq;
 
 public class Car_Controller : MonoBehaviour
 {
@@ -106,7 +103,6 @@ public class Car_Controller : MonoBehaviour
     public KeyCode Scene_Reset_Key = KeyCode.R; //Scene reset key
 
     [Header("Other Settings")]
-    public Transform Center_of_Mass; //Centre of mass of car
     public  float frictionMultiplier = 3f; //Friction Multiplier
     public Rigidbody Car_Rigidbody; //Car rigidbody
 
@@ -147,7 +143,6 @@ public class Car_Controller : MonoBehaviour
     void Start(){
         //To Prevent The Car From Toppling When Turning Too Much
         rb = GetComponent<Rigidbody>(); //get rigidbody
-        rb.centerOfMass = Center_of_Mass.localPosition; //Set the centre of mass of the rigid body to the centre of mass transform
 
         //Play Car Smoke Particle System
         if(Use_Particle_Systems){
@@ -198,7 +193,6 @@ public class Car_Controller : MonoBehaviour
         if(Input.GetKeyDown(Car_Off_Key) && (Car_Speed_KPH >= 0 && Car_Speed_KPH <= 1.5f) && Use_Car_States){ //if the car off key has been pressed and the car speed is 0 and the "use car states" is true
             Turn_Off_Car(); //Turn car off
         }
-
         //Turning Car on
         if(Input.GetKeyDown(Car_Start_Key) && Use_Car_States){ //if the "use car states" is true and that the car start key is pressed
             Car_Started = true;
@@ -230,7 +224,7 @@ public class Car_Controller : MonoBehaviour
         if(Car_Speed_In_KPH < Maximum_Speed && Car_Started){ //if the car's current speed is less than the maximum speed
             //Let car move forward and backward
             foreach(WheelCollider Wheel in Back_Wheels){
-                Wheel.motorTorque = Input.GetAxis("Vertical") * ((Motor_Torque * 5)/(Back_Wheels.Count + Front_Wheels.Count));
+                Wheel.motorTorque = Input.GetAxis("Vertical") * (Motor_Torque * 5/(Back_Wheels.Count + Front_Wheels.Count));
             }
         }
 

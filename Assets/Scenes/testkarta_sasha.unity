@@ -43,7 +43,8 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 12
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -18747,7 +18748,7 @@ MonoBehaviour:
   version: 2
   globalVolume: 0
   mode: 1
-  size: {x: 1300.8601, y: 44.55607, z: 2003.01}
+  size: {x: 1300.8599, y: 44.55607, z: 2003.01}
   overrideRendererFilters: 0
   minRendererVolumeSize: 0.1
   objectLayerMask:
@@ -18785,7 +18786,7 @@ Transform:
   m_GameObject: {fileID: 240843324}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 618.75665, y: 2.6299477, z: -0.000061035156}
+  m_LocalPosition: {x: 618.75653, y: 2.6299477, z: -0.000061035156}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25904,6 +25905,11 @@ PrefabInstance:
       propertyPath: m_LightProbeUsage
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2079519609164794405, guid: 18fbb15e08e14304bb5a880fa3b01210,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2140387493214224254, guid: 18fbb15e08e14304bb5a880fa3b01210,
         type: 3}
       propertyPath: m_CastShadows
@@ -25939,6 +25945,11 @@ PrefabInstance:
       propertyPath: m_AdditionalLightsShadowResolutionTier
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2709637355083032372, guid: 18fbb15e08e14304bb5a880fa3b01210,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2806742808693212295, guid: 18fbb15e08e14304bb5a880fa3b01210,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -25962,7 +25973,7 @@ PrefabInstance:
     - target: {fileID: 3130159087642083561, guid: 18fbb15e08e14304bb5a880fa3b01210,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3130159087642083561, guid: 18fbb15e08e14304bb5a880fa3b01210,
         type: 3}
@@ -25987,7 +25998,7 @@ PrefabInstance:
     - target: {fileID: 3664554315898336266, guid: 18fbb15e08e14304bb5a880fa3b01210,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3664554315898336266, guid: 18fbb15e08e14304bb5a880fa3b01210,
         type: 3}
@@ -26017,7 +26028,7 @@ PrefabInstance:
     - target: {fileID: 3957921615769427580, guid: 18fbb15e08e14304bb5a880fa3b01210,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3957921615769427580, guid: 18fbb15e08e14304bb5a880fa3b01210,
         type: 3}
@@ -26027,7 +26038,7 @@ PrefabInstance:
     - target: {fileID: 4034308945736447039, guid: 18fbb15e08e14304bb5a880fa3b01210,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4034308945736447039, guid: 18fbb15e08e14304bb5a880fa3b01210,
         type: 3}
@@ -26042,7 +26053,7 @@ PrefabInstance:
     - target: {fileID: 4316933624265745328, guid: 18fbb15e08e14304bb5a880fa3b01210,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4316933624265745328, guid: 18fbb15e08e14304bb5a880fa3b01210,
         type: 3}
@@ -26097,7 +26108,7 @@ PrefabInstance:
     - target: {fileID: 6680673184115358427, guid: 18fbb15e08e14304bb5a880fa3b01210,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6680673184115358427, guid: 18fbb15e08e14304bb5a880fa3b01210,
         type: 3}
@@ -26175,20 +26186,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 75
       objectReference: {fileID: 0}
+    - target: {fileID: 7697994806206832104, guid: 18fbb15e08e14304bb5a880fa3b01210,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7780767018789918487, guid: 18fbb15e08e14304bb5a880fa3b01210,
         type: 3}
       propertyPath: Lens.FieldOfView
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 7861669829369099068, guid: 18fbb15e08e14304bb5a880fa3b01210,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8012543078832083378, guid: 18fbb15e08e14304bb5a880fa3b01210,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8012543078832083378, guid: 18fbb15e08e14304bb5a880fa3b01210,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8289509703291685673, guid: 18fbb15e08e14304bb5a880fa3b01210,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8307367482245276216, guid: 18fbb15e08e14304bb5a880fa3b01210,
         type: 3}
@@ -39354,6 +39380,7 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+  m_ScrollDeltaPerTick: 6
 --- !u!114 &1736428961
 MonoBehaviour:
   m_ObjectHideFlags: 0
