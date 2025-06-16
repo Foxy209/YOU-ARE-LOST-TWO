@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using System.Collections;
 public class TriggerEnterZapravka : MonoBehaviour
@@ -30,4 +31,5 @@ public class TriggerEnterZapravka : MonoBehaviour
         plr.GetComponent<CharacterController>().enabled = true;
         Destroy(trigg);
     }
+    
 }
