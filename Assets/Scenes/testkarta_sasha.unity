@@ -611,7 +611,7 @@ PrefabInstance:
     - target: {fileID: 276930715162821877, guid: 0099c4d271b866146a5f328071e9165c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 276930715162821877, guid: 0099c4d271b866146a5f328071e9165c,
         type: 3}
@@ -27937,6 +27937,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3031547477023609179, guid: d1c47cdd64bb1434594b25717506bb2e, type: 3}
+--- !u!1 &864483341 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 276930715162821877, guid: 0099c4d271b866146a5f328071e9165c,
+    type: 3}
+  m_PrefabInstance: {fileID: 20964315}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &865745033 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3352333211691669815, guid: b3848e52f6fe3de4691ce57b905cde8d,
@@ -31266,6 +31272,11 @@ PrefabInstance:
       propertyPath: aud
       value: 
       objectReference: {fileID: 1357484860}
+    - target: {fileID: 4596980248858538605, guid: a01c7516e659bdf4b9897ab54df69b69,
+        type: 3}
+      propertyPath: igrok
+      value: 
+      objectReference: {fileID: 679511105}
     - target: {fileID: 4891075395243308008, guid: a01c7516e659bdf4b9897ab54df69b69,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -42032,6 +42043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialpan: {fileID: 1152284665}
+  igrok: {fileID: 679511105}
   tagtouse: GameController
   spkrigs:
   - {fileID: 21300000, guid: d317368df147a5589838a0d27a5774fa, type: 3}
@@ -42065,6 +42077,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2f970028c4d88ac66b210f8e257fc76c, type: 3}
   - {fileID: 8300000, guid: cd0a57bac52445c41a64feef0ea55748, type: 3}
   - {fileID: 8300000, guid: 2f970028c4d88ac66b210f8e257fc76c, type: 3}
+  _dopOn: 1
+  _dopOff: 0
+  dopOn: {fileID: 864483341}
+  dopOff: {fileID: 0}
 --- !u!65 &1902602886
 BoxCollider:
   m_ObjectHideFlags: 0

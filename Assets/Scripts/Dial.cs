@@ -1,10 +1,12 @@
 using System;
 using System.Collections;
+using EvolveGames;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 public class Dial : MonoBehaviour
 {
+    [SerializeField] private GameObject igrok;
     [SerializeField] private TMP_Text dialtxt;
     [SerializeField] private TMP_Text spkrtxt;
     [SerializeField] private AudioClip btnsnd;
@@ -47,6 +49,9 @@ public class Dial : MonoBehaviour
             aud.PlayOneShot(btnsnd);
         }
         disapr.color = new Color(0,0,0,1);
+        igrok.GetComponent<PlayerController>().walkingSpeed = 5;
+        igrok.GetComponent<PlayerController>().RuningSpeed = 10;
+        igrok.GetComponent<PlayerController>().CroughSpeed = 3;
         gameObject.SetActive(false);
     }
 }

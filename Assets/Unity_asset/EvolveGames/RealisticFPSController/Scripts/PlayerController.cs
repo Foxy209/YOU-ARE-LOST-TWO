@@ -11,9 +11,9 @@ namespace EvolveGames
         [Header("PlayerController")]
         [SerializeField] public Transform Camera;
         [SerializeField] public ItemChange Items;
-        [SerializeField, Range(1, 10)] float walkingSpeed = 3.0f;
-        [Range(0.1f, 5)] public float CroughSpeed = 1.0f;
-        [SerializeField, Range(2, 20)] float RuningSpeed = 4.0f;
+        [SerializeField, Range(0, 10)] public float walkingSpeed = 3.0f;
+        [Range(0f, 5)] public float CroughSpeed = 1.0f;
+        [SerializeField, Range(0, 20)] public float RuningSpeed = 4.0f;
         [SerializeField, Range(0, 20)] float jumpSpeed = 6.0f;
         [SerializeField, Range(0.5f, 10)] float lookSpeed = 2.0f;
         [SerializeField, Range(10, 120)] float lookXLimit = 80.0f;
