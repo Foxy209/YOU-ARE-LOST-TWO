@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements.Experimental;
 
 namespace EvolveGames
 {
@@ -12,6 +13,7 @@ namespace EvolveGames
         [SerializeField, Range(1f, 20)] float RotationSmooth = 6f;
         [Header("Movement")]
         [SerializeField] bool CanMovementFX = true;
+        public bool CanMovementFXF { get => CanMovementFX; set => CanMovementFX = value; }
         [SerializeField, Range(0.1f, 2)] float MovementAmount = 0.5f;
         
         Quaternion InstallRotation;

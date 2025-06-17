@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace EvolveGames
@@ -9,6 +7,7 @@ namespace EvolveGames
     {
         [Header("HeadBob Effect")]
         [SerializeField] bool Enabled = true;
+        public bool EnabledF { get => Enabled; set => Enabled = value; }
         [Space, Header("Main")]
         [SerializeField, Range(0.001f, 0.01f)] float Amount = 0.00484f;
         [SerializeField, Range(10f, 30f)] float Frequency = 16.0f;

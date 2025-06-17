@@ -6,7 +6,10 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Dial : MonoBehaviour
 {
-    [SerializeField] private GameObject igrok;
+    [SerializeField] private PlayerController player;
+    [SerializeField] private HeadBob playerHeadBob;
+    [SerializeField] private HandsHolder playerHandHolder;
+    [SerializeField] private MovementEffects playerMoveFX;
     [SerializeField] private TMP_Text dialtxt;
     [SerializeField] private TMP_Text spkrtxt;
     [SerializeField] private AudioClip btnsnd;
@@ -49,9 +52,10 @@ public class Dial : MonoBehaviour
             aud.PlayOneShot(btnsnd);
         }
         disapr.color = new Color(0,0,0,1);
-        igrok.GetComponent<PlayerController>().walkingSpeed = 5;
-        igrok.GetComponent<PlayerController>().RuningSpeed = 10;
-        igrok.GetComponent<PlayerController>().CroughSpeed = 3;
+        player.enabled = true;
+        playerMoveFX.CanMovementFXF = true;
+        playerHandHolder.enabled = true;
+        playerHeadBob.EnabledF = true;
         gameObject.SetActive(false);
     }
 }

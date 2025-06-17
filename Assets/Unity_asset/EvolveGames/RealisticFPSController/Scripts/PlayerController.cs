@@ -76,139 +76,71 @@ namespace EvolveGames
         }
 
         void Update()
-{
-    RaycastHit CroughCheck;
-    RaycastHit ObjectCheck;
-
-    // Гравитация (если не на лестнице)
-    if (!characterController.isGrounded && !isClimbing)
-    {
-        moveDirection.y -= gravity * Time.deltaTime;
-    }
-
-    // Получаем ввод
-    float inputVertical = Input.GetAxis("Vertical");
-    float inputHorizontal = Input.GetAxis("Horizontal");
-    bool wantsToMove = (Mathf.Abs(inputVertical) > 0.1f || Mathf.Abs(inputHorizontal) > 0.1f);
-    
-    // Определяем состояние бега
-    isRunning = !isCrough ? CanRunning ? Input.GetKey(KeyCode.LeftShift) && wantsToMove : false : false;
-
-    // Рассчитываем целевую скорость
-    float targetSpeed = 0f;
-    if (canMove)
-    {
-        targetSpeed = isRunning ? RuningSpeed : isCrough ? CroughSpeed : walkingSpeed;
-        
-        // Если скорость должна быть 0 - мгновенная остановка
-        if (targetSpeed <= 0.01f || !wantsToMove)
         {
-            WalkingValue = 0f;
-            RunningValue = 0f;
-            moveDirection.x = 0f;
-            moveDirection.z = 0f;
-        }
-        else
-        {
-            // Плавное изменение скорости
-            if (isRunning)
-                RunningValue = Mathf.Lerp(RunningValue, targetSpeed, timeToRunning * Time.deltaTime);
+            RaycastHit CroughCheck;
+            RaycastHit ObjectCheck;
+
+            if (!characterController.isGrounded && !isClimbing)
+            {
+                moveDirection.y -= gravity * Time.deltaTime;
+            }
+            Vector3 forward = transform.TransformDirection(Vector3.forward);
+            Vector3 right = transform.TransformDirection(Vector3.right);
+            isRunning = !isCrough ? CanRunning ? Input.GetKey(KeyCode.LeftShift) : false : false;
+            vertical = canMove ? (isRunning ? RunningValue : WalkingValue) * Input.GetAxis("Vertical") : 0;
+            horizontal = canMove ? (isRunning ? RunningValue : WalkingValue) * Input.GetAxis("Horizontal") : 0;
+            if (isRunning) RunningValue = Mathf.Lerp(RunningValue, RuningSpeed, timeToRunning * Time.deltaTime);
+            else RunningValue = WalkingValue;
+            float movementDirectionY = moveDirection.y;
+            moveDirection = (forward * vertical) + (right * horizontal);
+
+            if (Input.GetButton("Jump") && canMove && characterController.isGrounded && !isClimbing)
+            {
+                moveDirection.y = jumpSpeed;
+            }
             else
-                WalkingValue = Mathf.Lerp(WalkingValue, targetSpeed, 4f * Time.deltaTime);
+            {
+                moveDirection.y = movementDirectionY;
+            }
+            characterController.Move(moveDirection * Time.deltaTime);
+            Moving = horizontal < 0 || vertical < 0 || horizontal > 0 || vertical > 0 ? true : false;
+            if (Cursor.lockState == CursorLockMode.Locked && canMove)
+            {
+                Lookvertical = -Input.GetAxis("Mouse Y");
+                Lookhorizontal = Input.GetAxis("Mouse X");
+                rotationX += Lookvertical * lookSpeed;
+                rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
+                Camera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+                transform.rotation *= Quaternion.Euler(0, Lookhorizontal * lookSpeed, 0);
+
+                if (isRunning && Moving) cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, RunningFOV, SpeedToFOV * Time.deltaTime);
+                else cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, InstallFOV, SpeedToFOV * Time.deltaTime);
+            }
+
+            if (Input.GetKey(CroughKey))
+            {
+                isCrough = true;
+                float Height = Mathf.Lerp(characterController.height, CroughHeight, 5 * Time.deltaTime);
+                characterController.height = Height;
+                WalkingValue = Mathf.Lerp(WalkingValue, CroughSpeed, 6 * Time.deltaTime);
+                }
+            else if (!Physics.Raycast(GetComponentInChildren<Camera>().transform.position, transform.TransformDirection(Vector3.up), out CroughCheck, 0.8f, 1))
+            {
+                if (characterController.height != InstallCroughHeight)
+                {
+                    isCrough = false;
+                    float Height = Mathf.Lerp(characterController.height, InstallCroughHeight, 6 * Time.deltaTime);
+                    characterController.height = Height;
+                    WalkingValue = Mathf.Lerp(WalkingValue, walkingSpeed, 4 * Time.deltaTime);
+                }
+            }
+            if(WallDistance != Physics.Raycast(GetComponentInChildren<Camera>().transform.position, transform.TransformDirection(Vector3.forward), out ObjectCheck, HideDistance, LayerMaskInt) && CanHideDistanceWall)
+            {
+                WallDistance = Physics.Raycast(GetComponentInChildren<Camera>().transform.position, transform.TransformDirection(Vector3.forward), out ObjectCheck, HideDistance, LayerMaskInt);
+                Items.ani.SetBool("Hide", WallDistance);
+                Items.DefiniteHide = WallDistance;
+            }
         }
-    }
-    else
-    {
-        // Полная остановка, если движение запрещено
-        WalkingValue = 0f;
-        RunningValue = 0f;
-        moveDirection.x = 0f;
-        moveDirection.z = 0f;
-    }
-
-    // Текущая активная скорость
-    float currentSpeed = isRunning ? RunningValue : WalkingValue;
-
-    // Расчет направления движения ОТНОСИТЕЛЬНО КАМЕРЫ
-    Vector3 cameraForward = Camera.transform.forward;
-    Vector3 cameraRight = Camera.transform.right;
-    cameraForward.y = 0f; // Игнорируем наклон камеры вверх/вниз
-    cameraRight.y = 0f;
-    cameraForward.Normalize();
-    cameraRight.Normalize();
-
-    // Комбинируем направление с учетом ввода
-    Vector3 desiredMoveDirection = (cameraForward * inputVertical) + (cameraRight * inputHorizontal);
-    desiredMoveDirection.Normalize();
-
-    // Применяем движение
-    if (canMove && wantsToMove)
-    {
-        moveDirection.x = desiredMoveDirection.x * currentSpeed;
-        moveDirection.z = desiredMoveDirection.z * currentSpeed;
-    }
-
-    // Прыжок
-    if (Input.GetButton("Jump") && canMove && characterController.isGrounded && !isClimbing)
-    {
-        moveDirection.y = jumpSpeed;
-    }
-
-    // Применяем движение
-    characterController.Move(moveDirection * Time.deltaTime);
-    Moving = (Mathf.Abs(moveDirection.x) > 0.1f || Mathf.Abs(moveDirection.z) > 0.1f);
-
-    // Вращение игрока по горизонтали (отдельно от камеры)
-    if (Cursor.lockState == CursorLockMode.Locked && canMove)
-    {
-        Lookvertical = -Input.GetAxis("Mouse Y");
-        Lookhorizontal = Input.GetAxis("Mouse X");
-
-        rotationX += Lookvertical * lookSpeed;
-        rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
-        Camera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-        transform.rotation *= Quaternion.Euler(0, Lookhorizontal * lookSpeed, 0);
-
-        // Изменение FOV при беге
-        if (isRunning && Moving) 
-            cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, RunningFOV, SpeedToFOV * Time.deltaTime);
-        else 
-            cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, InstallFOV, SpeedToFOV * Time.deltaTime);
-    }
-
-    // Приседание (остается без изменений)
-    if (Input.GetKey(CroughKey))
-    {
-        isCrough = true;
-        float Height = Mathf.Lerp(characterController.height, CroughHeight, 5 * Time.deltaTime);
-        characterController.height = Height;
-        WalkingValue = Mathf.Lerp(WalkingValue, CroughSpeed, 6 * Time.deltaTime);
-    }
-    else if (!Physics.Raycast(GetComponentInChildren<Camera>().transform.position, 
-                            transform.TransformDirection(Vector3.up), 
-                            out CroughCheck, 0.8f, 1))
-    {
-        if (characterController.height != InstallCroughHeight)
-        {
-            isCrough = false;
-            float Height = Mathf.Lerp(characterController.height, InstallCroughHeight, 6 * Time.deltaTime);
-            characterController.height = Height;
-            WalkingValue = Mathf.Lerp(WalkingValue, walkingSpeed, 4 * Time.deltaTime);
-        }
-    }
-
-    // Скрытие рук при близости к стене (без изменений)
-    if (WallDistance != Physics.Raycast(GetComponentInChildren<Camera>().transform.position, 
-                                      transform.TransformDirection(Vector3.forward), 
-                                      out ObjectCheck, HideDistance, LayerMaskInt) && CanHideDistanceWall)
-    {
-        WallDistance = Physics.Raycast(GetComponentInChildren<Camera>().transform.position, 
-                                     transform.TransformDirection(Vector3.forward), 
-                                     out ObjectCheck, HideDistance, LayerMaskInt);
-        Items.ani.SetBool("Hide", WallDistance);
-        Items.DefiniteHide = WallDistance;
-    }
-}
 
         private void OnTriggerEnter(Collider other)
         {

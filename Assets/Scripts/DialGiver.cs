@@ -1,11 +1,13 @@
-using System;
 using EvolveGames;
 using UnityEngine;
 
 public class DialGiver : MonoBehaviour
 {
     [SerializeField] private GameObject dialpan;
-    [SerializeField] private GameObject igrok;
+    [SerializeField] private PlayerController player;
+    [SerializeField] private MovementEffects playerMoveFX;
+    [SerializeField] private HandsHolder playerHandHolder;
+    [SerializeField] private HeadBob playerHeadBob;
     private bool isdlcompl = false; 
     [SerializeField] private string tagtouse;
     [SerializeField] private Sprite[] spkrigs;
@@ -35,9 +37,10 @@ public class DialGiver : MonoBehaviour
         {
             GiveDial();
             isdlcompl = true;
-            igrok.GetComponent<PlayerController>().RuningSpeed = 0f;
-            igrok.GetComponent<PlayerController>().walkingSpeed = 0f;
-            igrok.GetComponent<PlayerController>().CroughSpeed = 0f;
+            playerMoveFX.CanMovementFXF = false;
+            playerHandHolder.enabled = false;
+            playerHeadBob.EnabledF = false;
+            player.enabled = false;
 
             if (_dopOn)
             {

@@ -24,7 +24,7 @@ public class TrigersOnTheMap : MonoBehaviour
         Destroy(gryzovik_movment);
         gryzovik_static.SetActive(true);
         igrok.SetActive(true);
-        block_wall.SetActive(true);
+        //block_wall.SetActive(true);
     }
 }
 
