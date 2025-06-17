@@ -1,17 +1,21 @@
 using UnityEngine;
 
-public class TrigersOnTheMap : MonoBehaviour
+public class TriggersOnTheMap : MonoBehaviour
 {
-    [SerializeField] private GameObject gryzovik_movment;    
-    [SerializeField] private GameObject gryzovik_static;    
+    [SerializeField] private GameObject ObjectToDisable;
+    [SerializeField] private GameObject ObjectToEnable;
+    [SerializeField] private string Tag;    
     [SerializeField] private GameObject igrok;
+    [SerializeField] private Vector3 PlayerPosition;
+    [SerializeField] private Vector3 PlayerRotation;
+    [SerializeField] private bool enableplayer = true;
     [SerializeField] private GameObject zatem;
     [SerializeField] private GameObject block_wall;
     [SerializeField] private AudioSource sound;
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag(Tag))
         {
             zatem.GetComponent<Animator>().CrossFade("zatemnenie",0,0);
             sound.Play();
@@ -21,10 +25,13 @@ public class TrigersOnTheMap : MonoBehaviour
 
     private void Trig()
     {
-        Destroy(gryzovik_movment);
-        gryzovik_static.SetActive(true);
-        igrok.SetActive(true);
+        igrok.transform.position = PlayerPosition;
+        igrok.transform.eulerAngles = PlayerRotation;
+        igrok.SetActive(enableplayer);
+        ObjectToDisable.SetActive(false);
+        ObjectToDisable.transform.position = ObjectToEnable.transform.position;
+        ObjectToDisable.transform.rotation = ObjectToEnable.transform.rotation;
+        ObjectToEnable.SetActive(true);
         //block_wall.SetActive(true);
     }
 }
-

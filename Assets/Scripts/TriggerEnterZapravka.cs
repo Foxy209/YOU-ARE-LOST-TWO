@@ -12,7 +12,7 @@ public class TriggerEnterZapravka : MonoBehaviour
     private void Awake() => zatemn.StopPlayback();
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("GameController"))
+        if (other.CompareTag("FPSPlayer"))
         {
             zatemn.CrossFade("zatemnenie",0,0);
             StartCoroutine(Trig(other.gameObject));

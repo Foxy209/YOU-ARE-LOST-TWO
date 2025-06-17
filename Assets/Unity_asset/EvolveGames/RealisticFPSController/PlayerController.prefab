@@ -1307,7 +1307,7 @@ GameObject:
   - component: {fileID: 4434987454404763374}
   m_Layer: 0
   m_Name: PlayerController
-  m_TagString: GameController
+  m_TagString: FPSPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1321,8 +1321,8 @@ Transform:
   m_GameObject: {fileID: 4582019824381016673}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4775, y: 1.4775, z: 1.4775}
+  m_LocalPosition: {x: 528, y: 2.5, z: -23}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3678846945412403869}

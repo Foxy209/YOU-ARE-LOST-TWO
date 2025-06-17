@@ -16,8 +16,8 @@ public class DialGiver : MonoBehaviour
     [SerializeField] private AudioClip[] txtsnds;
     [SerializeField] private bool _dopOn;
     [SerializeField] private bool _dopOff;
-    [SerializeField] private GameObject dopOn;
-    [SerializeField] private GameObject dopOff;
+    [SerializeField] private GameObject[] dopOns;
+    [SerializeField] private GameObject[] dopOffs;
     
     void GiveDial()
     {
@@ -33,7 +33,7 @@ public class DialGiver : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag(tagtouse) && !isdlcompl) 
+        if (other.gameObject.CompareTag(tagtouse) && !isdlcompl)
         {
             GiveDial();
             isdlcompl = true;
@@ -41,14 +41,13 @@ public class DialGiver : MonoBehaviour
             playerHandHolder.enabled = false;
             playerHeadBob.EnabledF = false;
             player.enabled = false;
-
-            if (_dopOn)
+            foreach (GameObject ObjectToEnable in dopOns)
             {
-                dopOn.SetActive(true);
+                ObjectToEnable.SetActive(_dopOn);
             }
-            if (_dopOff)
+            foreach (GameObject ObjectToDisable in dopOffs)
             {
-                dopOff.SetActive(false);
+                ObjectToDisable.SetActive(!_dopOff);
             }
         }
     }
