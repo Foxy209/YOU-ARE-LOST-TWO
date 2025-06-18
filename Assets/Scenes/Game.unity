@@ -4248,6 +4248,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7239266735923262490, guid: d1c47cdd64bb1434594b25717506bb2e, type: 3}
+--- !u!82 &490656718 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8050068204116869865, guid: 18fbb15e08e14304bb5a880fa3b01210,
+    type: 3}
+  m_PrefabInstance: {fileID: 683239706}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &494535742
 GameObject:
   m_ObjectHideFlags: 0
@@ -9661,6 +9667,9 @@ MonoBehaviour:
   zatem: {fileID: 780886625}
   block_wall: {fileID: 0}
   sound: {fileID: 1092056193}
+  DoYouNeedToChangeClip: 1
+  clip: {fileID: 8300000, guid: b19190e0301b4444893a704342b98c3d, type: 3}
+  sour: {fileID: 490656718}
 --- !u!65 &1092056195
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15409,6 +15418,9 @@ MonoBehaviour:
   zatem: {fileID: 780886625}
   block_wall: {fileID: 0}
   sound: {fileID: 1493634994}
+  DoYouNeedToChangeClip: 0
+  clip: {fileID: 0}
+  sour: {fileID: 0}
 --- !u!65 &1493634992
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16110,6 +16122,9 @@ MonoBehaviour:
   zatem: {fileID: 780886625}
   block_wall: {fileID: 0}
   sound: {fileID: 1550678324}
+  DoYouNeedToChangeClip: 0
+  clip: {fileID: 0}
+  sour: {fileID: 0}
 --- !u!82 &1550678324
 AudioSource:
   m_ObjectHideFlags: 0

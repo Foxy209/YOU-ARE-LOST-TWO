@@ -12,6 +12,9 @@ public class TriggersOnTheMap : MonoBehaviour
     [SerializeField] private GameObject zatem;
     [SerializeField] private GameObject block_wall;
     [SerializeField] private AudioSource sound;
+    [SerializeField] private bool DoYouNeedToChangeClip;
+    [SerializeField] private AudioClip clip;
+    [SerializeField] private AudioSource sour;
     
     private void OnTriggerEnter(Collider other)
     {
@@ -33,5 +36,10 @@ public class TriggersOnTheMap : MonoBehaviour
         ObjectToDisable.transform.rotation = ObjectToEnable.transform.rotation;
         ObjectToEnable.SetActive(true);
         //block_wall.SetActive(true);
+        if (DoYouNeedToChangeClip)
+        {
+            sour.clip = clip;
+            sour.Play();
+        }
     }
 }
