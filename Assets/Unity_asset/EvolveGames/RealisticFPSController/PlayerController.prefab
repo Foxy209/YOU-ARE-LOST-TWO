@@ -1368,14 +1368,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Camera: {fileID: 4582019823802981677}
   Items: {fileID: 4434987455403460021}
-  walkingSpeed: 3
-  CroughSpeed: 1
-  RuningSpeed: 4
+  walkingSpeed: 5
+  CroughSpeed: 3
+  RuningSpeed: 10
   jumpSpeed: 6
   lookSpeed: 2
   lookXLimit: 80
   RunningFOV: 70
-  SpeedToFOV: 4
+  SpeedToFOV: 10
   CroughHeight: 1
   gravity: 20
   timeToRunning: 2

@@ -560,66 +560,66 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: d1c47cdd64bb1434594b25717506bb2e,
+    - target: {fileID: 4010618867705855848, guid: a6bb215526e98d74f9de99d995251dbe,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 52.460304
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d1c47cdd64bb1434594b25717506bb2e,
+    - target: {fileID: 4010618867705855848, guid: a6bb215526e98d74f9de99d995251dbe,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d1c47cdd64bb1434594b25717506bb2e,
+    - target: {fileID: 4010618867705855848, guid: a6bb215526e98d74f9de99d995251dbe,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 5.8204765
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d1c47cdd64bb1434594b25717506bb2e,
+    - target: {fileID: 4010618867705855848, guid: a6bb215526e98d74f9de99d995251dbe,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d1c47cdd64bb1434594b25717506bb2e,
+    - target: {fileID: 4010618867705855848, guid: a6bb215526e98d74f9de99d995251dbe,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d1c47cdd64bb1434594b25717506bb2e,
+    - target: {fileID: 4010618867705855848, guid: a6bb215526e98d74f9de99d995251dbe,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d1c47cdd64bb1434594b25717506bb2e,
+    - target: {fileID: 4010618867705855848, guid: a6bb215526e98d74f9de99d995251dbe,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d1c47cdd64bb1434594b25717506bb2e,
+    - target: {fileID: 4010618867705855848, guid: a6bb215526e98d74f9de99d995251dbe,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d1c47cdd64bb1434594b25717506bb2e,
+    - target: {fileID: 4010618867705855848, guid: a6bb215526e98d74f9de99d995251dbe,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d1c47cdd64bb1434594b25717506bb2e,
+    - target: {fileID: 4010618867705855848, guid: a6bb215526e98d74f9de99d995251dbe,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: d1c47cdd64bb1434594b25717506bb2e,
+    - target: {fileID: 4387425438992328146, guid: a6bb215526e98d74f9de99d995251dbe,
         type: 3}
       propertyPath: m_Name
-      value: MotelSketchfab
+      value: Motel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d1c47cdd64bb1434594b25717506bb2e, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: a6bb215526e98d74f9de99d995251dbe, type: 3}
 --- !u!43 &1161226772
 Mesh:
   m_ObjectHideFlags: 0
@@ -1517,6 +1517,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2523020156626742514, guid: 77dd063428ff117d4958903ec5081c69,
+        type: 3}
+      propertyPath: m_Name
+      value: zavpavka_on
+      objectReference: {fileID: 0}
     - target: {fileID: 2902642371350197832, guid: 77dd063428ff117d4958903ec5081c69,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1566,11 +1571,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2523020156626742514, guid: 77dd063428ff117d4958903ec5081c69,
-        type: 3}
-      propertyPath: m_Name
-      value: zavpavka_on
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1751,7 +1751,7 @@ PrefabInstance:
     - target: {fileID: 173486594114828146, guid: 18fbb15e08e14304bb5a880fa3b01210,
         type: 3}
       propertyPath: field of view
-      value: 60.000004
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 173486594114828146, guid: 18fbb15e08e14304bb5a880fa3b01210,
         type: 3}
