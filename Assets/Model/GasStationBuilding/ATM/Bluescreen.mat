@@ -21,15 +21,12 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Bluescreen
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 2b3b7d0b179748b449e12721ea4fcfa6,
+    type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _EMISSION
-  - _ENVIRONMENTREFLECTIONS_OFF
   - _RECEIVE_SHADOWS_OFF
-  - _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
-  - _SPECULARHIGHLIGHTS_OFF
   - _SPECULAR_SETUP
   m_InvalidKeywords: []
   m_LightmapFlags: 2
@@ -44,6 +41,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_4450AB74:
+        m_Texture: {fileID: 2800000, guid: fd53d3e29c5fd034fa2e30b402d937a5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 2800000, guid: fd53d3e29c5fd034fa2e30b402d937a5, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -65,6 +66,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
+        m_Texture: {fileID: 2800000, guid: fd53d3e29c5fd034fa2e30b402d937a5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Emission_Texture:
         m_Texture: {fileID: 2800000, guid: fd53d3e29c5fd034fa2e30b402d937a5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -102,12 +107,16 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - Boolean_43476D73: 1
+    - Boolean_D258FF8E: 1
+    - Vector1_B2CC132F: 32
     - _AddPrecomputedVelocity: 0
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
+    - _CastShadows: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 2
@@ -123,6 +132,7 @@ Material:
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
+    - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 0
     - _Smoothness: 0
@@ -133,11 +143,15 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 0
     - _XRMotionVectorsPass: 1
+    - _ZTest: 4
     - _ZWrite: 1
+    - _ZWriteControl: 0
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 1.1353014, a: 1}
+    - _Emission_Color: {r: 0, g: 0, b: 5.992157, a: 1}
+    - _Main_Color: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
