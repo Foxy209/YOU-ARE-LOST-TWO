@@ -5,7 +5,10 @@ public class TriggerUsing_on_E : MonoBehaviour
 {
     [SerializeField] private string Tag; 
     [SerializeField] private bool DoYouNeedUsingSound;
-    [SerializeField] private AudioSource sour;
+    [SerializeField] private AudioSource sour_using;
+    [SerializeField] private bool DoYouNeedToChangeClip;
+    [SerializeField] private AudioClip clip;
+    [SerializeField] private AudioSource sour_change;
     [SerializeField] private GameObject UI_E;
     [SerializeField] private bool _enable_GM;
     [SerializeField] private bool _disable_GM;
@@ -27,9 +30,14 @@ public class TriggerUsing_on_E : MonoBehaviour
                 if(obj != null) obj.SetActive(!_disable_GM);
             }
         
-            if (DoYouNeedUsingSound && sour != null)
+            if (DoYouNeedUsingSound)
             {
-                sour.Play();
+                sour_using.Play();
+            }
+            if (DoYouNeedToChangeClip)
+            {
+                sour_change.clip = clip;
+                sour_change.Play();
             }
             Destroy(gameObject);
             UI_E.SetActive(false);
