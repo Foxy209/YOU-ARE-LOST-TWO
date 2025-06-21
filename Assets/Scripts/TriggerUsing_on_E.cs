@@ -4,17 +4,23 @@ using UnityEngine;
 public class TriggerUsing_on_E : MonoBehaviour
 {
     [SerializeField] private string Tag; 
+    
     [SerializeField] private bool DoYouNeedUsingSound;
     [SerializeField] private AudioSource sour_using;
     [SerializeField] private bool DoYouNeedToChangeClip;
     [SerializeField] private AudioClip clip;
     [SerializeField] private AudioSource sour_change;
+    
     [SerializeField] private GameObject UI_E;
+    
     [SerializeField] private bool _enable_GM;
     [SerializeField] private bool _disable_GM;
     [SerializeField] private GameObject[] enabl;
     [SerializeField] private GameObject[] disabl;
-
+    
+    [SerializeField] private bool DoYouNeedAnim;
+    [SerializeField] private Animator zatemn;
+    [SerializeField] private string zatem_who;
     private bool inTrigger = false;
 
     private void Update()
@@ -29,7 +35,12 @@ public class TriggerUsing_on_E : MonoBehaviour
             {
                 if(obj != null) obj.SetActive(!_disable_GM);
             }
-        
+
+            if (DoYouNeedAnim)
+            {
+                zatemn.CrossFade(zatem_who,0,0);
+            }
+            
             if (DoYouNeedUsingSound)
             {
                 sour_using.Play();
