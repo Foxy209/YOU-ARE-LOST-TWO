@@ -38,8 +38,8 @@ public class TriggersOnTheMap : MonoBehaviour
         //block_wall.SetActive(true);
         if (DoYouNeedToChangeClip)
         {
-            sour.clip = clip;
-            sour.Play();
+                sour.clip = clip;
+                sour.Play();
         }
     }
 }
