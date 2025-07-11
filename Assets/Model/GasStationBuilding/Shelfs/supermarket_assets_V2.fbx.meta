@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Base
+    second: {fileID: 2100000, guid: 6d16b0b1c961cb2d3a5bf29fc099505c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Bottle
-    second: {fileID: 2100000, guid: a058f9d7897650d4e8cc6cc2a7e8c6ef, type: 2}
+    second: {fileID: 2100000, guid: b46198af17cfe01d28a6f6087c45445f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -17,8 +22,23 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Corn
+    second: {fileID: 2100000, guid: 1f07c01569ab6e1708be76aa81bf4f87, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Cover
     second: {fileID: 2100000, guid: d33e8747e9bd1a24ab60fc5eaef62937, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Green
+    second: {fileID: 2100000, guid: 3f889282d72f9ff80b3d3521c80b5afb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Magenta
+    second: {fileID: 2100000, guid: bcfb7975a75b3d9cd915d80a055801ec, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -87,6 +107,21 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: 26175a545d51f7e4e8537ce6c3dcea29, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mountain
+    second: {fileID: 2100000, guid: a581fde3605a16210843dfe446b37a07, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Red
+    second: {fileID: 2100000, guid: f1457125498e46e0bbdad83ee65d549e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Support_Cover
     second: {fileID: 2100000, guid: 1477e1766f07c6f4cacfa8f364a707c4, type: 2}
   - first:
@@ -109,6 +144,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: can_EMBLEM
     second: {fileID: 2100000, guid: 2ab17f14d5195b647a5603830a747780, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ja
+    second: {fileID: 2100000, guid: 7c7919c18d4fdaaca9c1492260d10bc9, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -148,7 +188,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.75
     meshCompression: 3
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -186,7 +226,7 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 2
-    normalCalculationMode: 4
+    normalCalculationMode: 1
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 3
@@ -203,7 +243,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.75
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
