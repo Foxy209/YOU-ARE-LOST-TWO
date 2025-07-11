@@ -3,7 +3,32 @@ guid: c1d582fc398b1d243866aab927af66c0
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blanket
+    second: {fileID: 2100000, guid: 1eb4c545c8035d44fb9d8abc5b3bb631, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blue_Wood
+    second: {fileID: 2100000, guid: dce032596147271bea81bf8cd39beedd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Brown_Wood
+    second: {fileID: 2100000, guid: dce032596147271bea81bf8cd39beedd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Matress
+    second: {fileID: 2100000, guid: b0b352a9942b40f0585d8a8f1cd7645f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pillow
+    second: {fileID: 2100000, guid: c571a1aa4b5ba65a1acbc9e8d35bc1c6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
