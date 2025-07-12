@@ -22,6 +22,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Coke
+    second: {fileID: 2100000, guid: f0758421f720f53e989d09762964dad7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Corn
     second: {fileID: 2100000, guid: 1f07c01569ab6e1708be76aa81bf4f87, type: 2}
   - first:
@@ -127,6 +132,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Zucker
+    second: {fileID: 2100000, guid: 0b1bf7f17bd11664f82ed310f5fdc580, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: bottle.001
     second: {fileID: 2100000, guid: be5e71b126b6cfb4cb42e0ff08828d4a, type: 2}
   - first:
@@ -188,7 +198,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.75
+    globalScale: 75
     meshCompression: 3
     addColliders: 0
     useSRGBMaterialColor: 1
