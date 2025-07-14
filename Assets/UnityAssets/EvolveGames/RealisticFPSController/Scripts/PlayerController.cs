@@ -54,6 +54,9 @@ namespace EvolveGames
         float RunningValue;
         bool WallDistance;
         [HideInInspector] public float WalkingValue;
+        
+        public int maxHealth = 100;
+        private int currentHealth;
         void Start()
         {
             characterController = GetComponent<CharacterController>();
@@ -66,6 +69,7 @@ namespace EvolveGames
             InstallFOV = cam.fieldOfView;
             RunningValue = runningSpeed;
             WalkingValue = walkingSpeed;
+            currentHealth = maxHealth;
         }
 
         void Update()
@@ -161,6 +165,26 @@ namespace EvolveGames
                 Items.ani.SetBool("Hide", false);
                 Items.Hide(false);
             }
+        }
+        
+        public void TakeDamage(int damage)
+        {
+            currentHealth -= damage;
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
+        }
+    
+        public void Die()
+        {
+            CheckpointSystem.Instance.RespawnPlayer(gameObject);
+        }
+    
+        public void ResetToCheckpoint()
+        {
+            currentHealth = maxHealth;
+            // Дополнительный сброс состояния
         }
     }
 }
