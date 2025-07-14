@@ -6,8 +6,9 @@ namespace EvolveGames
     [RequireComponent(typeof(CharacterController))]
     public class PlayerController : MonoBehaviour
     {
-        [Header("PlayerController")]
-        [SerializeField] private Transform Camera;
+        [Header("PlayerController")] [SerializeField]
+        private Transform Camera;
+
         [SerializeField] public ItemChange Items;
         [SerializeField, Range(0, 10)] public float walkingSpeed = 3.0f;
         [Range(0f, 5)] public float CroughSpeed = 1.0f;
@@ -15,28 +16,32 @@ namespace EvolveGames
         [SerializeField, Range(0, 20)] float jumpSpeed = 6.0f;
         [SerializeField, Range(0.5f, 10)] float lookSpeed = 2.0f;
         [SerializeField, Range(10, 120)] float lookXLimit = 80.0f;
-        [Space(10)]
-        [Header("Advance")]
-        [SerializeField] float RunningFOV = 65.0f;
+
+        [Space(10)] [Header("Advance")] [SerializeField]
+        float RunningFOV = 65.0f;
+
         [SerializeField] float SpeedToFOV = 4.0f;
         [SerializeField] float CroughHeight = 1.0f;
         [SerializeField] float gravity = 20.0f;
         [SerializeField] float timeToRunning = 2.0f;
         [HideInInspector] public bool canMove = true;
         [HideInInspector] public bool CanRunning = true;
-        [Space(10)]
-        [Header("Climbing")]
-        [SerializeField] bool CanClimbing = true;
+
+        [Space(10)] [Header("Climbing")] [SerializeField]
+        bool CanClimbing = true;
+
         [SerializeField, Range(1, 25)] float Speed = 2f;
         bool isClimbing = false;
-        [Space(10)]
-        [Header("HandsHide")]
-        [SerializeField] bool CanHideDistanceWall = true;
+
+        [Space(10)] [Header("HandsHide")] [SerializeField]
+        bool CanHideDistanceWall = true;
+
         [SerializeField, Range(0.1f, 5)] float HideDistance = 1.5f;
         [SerializeField] int LayerMaskInt = 1;
-        [Space(10)]
-        [Header("Input")]
-        [SerializeField] KeyCode CroughKey = KeyCode.LeftControl;
+
+        [Space(10)] [Header("Input")] [SerializeField]
+        KeyCode CroughKey = KeyCode.LeftControl;
+
         [HideInInspector] public CharacterController characterController;
         [HideInInspector] public Vector3 moveDirection = Vector3.zero;
         bool isCrough = false;
@@ -55,8 +60,7 @@ namespace EvolveGames
         bool WallDistance;
         [HideInInspector] public float WalkingValue;
         
-        public int maxHealth = 100;
-        private int currentHealth;
+
         void Start()
         {
             characterController = GetComponent<CharacterController>();
@@ -69,7 +73,6 @@ namespace EvolveGames
             InstallFOV = cam.fieldOfView;
             RunningValue = runningSpeed;
             WalkingValue = walkingSpeed;
-            currentHealth = maxHealth;
         }
 
         void Update()
@@ -80,6 +83,7 @@ namespace EvolveGames
             {
                 moveDirection.y -= gravity * Time.deltaTime;
             }
+
             Vector3 forward = transform.TransformDirection(Vector3.forward);
             Vector3 right = transform.TransformDirection(Vector3.right);
             isRunning = !isCrough ? CanRunning ? Input.GetKey(KeyCode.LeftShift) : false : false;
@@ -97,6 +101,7 @@ namespace EvolveGames
             {
                 moveDirection.y = movementDirectionY;
             }
+
             characterController.Move(moveDirection * Time.deltaTime);
             Moving = horizontal < 0 || vertical < 0 || horizontal > 0 || vertical > 0 ? true : false;
             if (Cursor.lockState == CursorLockMode.Locked && canMove)
@@ -108,9 +113,11 @@ namespace EvolveGames
                 Camera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
                 transform.rotation *= Quaternion.Euler(0, Lookhorizontal * lookSpeed, 0);
 
-                if (isRunning && Moving) cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, RunningFOV, SpeedToFOV * Time.deltaTime);
+                if (isRunning && Moving)
+                    cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, RunningFOV, SpeedToFOV * Time.deltaTime);
                 else cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, InstallFOV, SpeedToFOV * Time.deltaTime);
             }
+
             if (Input.GetKey(CroughKey))
             {
                 isCrough = true;
@@ -118,7 +125,8 @@ namespace EvolveGames
                 characterController.height = Height;
                 WalkingValue = Mathf.Lerp(WalkingValue, CroughSpeed, 6 * Time.deltaTime);
             }
-            else if (!Physics.Raycast(GetComponentInChildren<Camera>().transform.position, transform.TransformDirection(Vector3.up), out CroughCheck, 0.8f, 1))
+            else if (!Physics.Raycast(GetComponentInChildren<Camera>().transform.position,
+                transform.TransformDirection(Vector3.up), out CroughCheck, 0.8f, 1))
             {
                 if (characterController.height != InstallCroughHeight)
                 {
@@ -128,14 +136,17 @@ namespace EvolveGames
                     WalkingValue = Mathf.Lerp(WalkingValue, walkingSpeed, 4 * Time.deltaTime);
                 }
             }
-            if(WallDistance != Physics.Raycast(GetComponentInChildren<Camera>().transform.position, transform.TransformDirection(Vector3.forward), HideDistance, LayerMaskInt) && CanHideDistanceWall)
+
+            if (WallDistance != Physics.Raycast(GetComponentInChildren<Camera>().transform.position,
+                transform.TransformDirection(Vector3.forward), HideDistance, LayerMaskInt) && CanHideDistanceWall)
             {
-                WallDistance = Physics.Raycast(GetComponentInChildren<Camera>().transform.position, transform.TransformDirection(Vector3.forward), HideDistance, LayerMaskInt);
+                WallDistance = Physics.Raycast(GetComponentInChildren<Camera>().transform.position,
+                    transform.TransformDirection(Vector3.forward), HideDistance, LayerMaskInt);
                 Items.ani.SetBool("Hide", WallDistance);
                 Items.DefiniteHide = WallDistance;
             }
         }
-        
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Ladder") && CanClimbing)
@@ -165,26 +176,6 @@ namespace EvolveGames
                 Items.ani.SetBool("Hide", false);
                 Items.Hide(false);
             }
-        }
-        
-        public void TakeDamage(int damage)
-        {
-            currentHealth -= damage;
-            if (currentHealth <= 0)
-            {
-                Die();
-            }
-        }
-    
-        public void Die()
-        {
-            CheckpointSystem.Instance.RespawnPlayer(gameObject);
-        }
-    
-        public void ResetToCheckpoint()
-        {
-            currentHealth = maxHealth;
-            // Дополнительный сброс состояния
         }
     }
 }

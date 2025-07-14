@@ -6,8 +6,8 @@ public class CheckpointSystem : MonoBehaviour
     public Vector3 LastCheckpointPosition { get; private set; }
     public Quaternion LastCheckpointRotation { get; private set; }
 
-    [SerializeField] private ParticleSystem checkpointActivatedEffect;
-    [SerializeField] private AudioClip checkpointSound;
+    //[SerializeField] private ParticleSystem checkpointActivatedEffect;
+    //[SerializeField] private AudioClip checkpointSound;
 
     private Dictionary<GameObject, bool> checkpointStatus = new Dictionary<GameObject, bool>();
 
@@ -33,15 +33,15 @@ public class CheckpointSystem : MonoBehaviour
         SaveLevelState();
     
         // Эффекты и звуки 
-        if (!checkpointStatus.ContainsKey(checkpointObject)) 
-        {
-            if (checkpointActivatedEffect != null)
-                Instantiate(checkpointActivatedEffect, position, Quaternion.identity);
+        //if (!checkpointStatus.ContainsKey(checkpointObject)) 
+        //{
+           // if (checkpointActivatedEffect != null)
+               // Instantiate(checkpointActivatedEffect, position, Quaternion.identity);
         
-            AudioSource.PlayClipAtPoint(checkpointSound, position);
+            //AudioSource.PlayClipAtPoint(checkpointSound, position);
         
-            checkpointStatus[checkpointObject] = true;
-        }
+           // checkpointStatus[checkpointObject] = true;
+       // }
     }
 
     public void RespawnPlayer(GameObject player)
@@ -59,8 +59,8 @@ public class CheckpointSystem : MonoBehaviour
         if (controller != null) controller.enabled = true;
     
         // Сброс здоровья
-        //PlayerHealth health = player.GetComponent<PlayerHealth>();
-        //if (health != null) health.ResetToCheckpoint();
+        PlHeart health = player.GetComponent<PlHeart>();
+        if (health != null) health.ResetToCheckpoint();
     }
     
     
