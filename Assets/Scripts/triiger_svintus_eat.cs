@@ -5,8 +5,11 @@ public class triiger_svintus_eat : MonoBehaviour
 {
     [SerializeField] private GameObject _cam;
     [SerializeField] private GameObject _camAN;
+    [SerializeField] private GameObject Player;
+    [SerializeField] private GameObject SvinRun;
     [SerializeField] private Animator svin;
     [SerializeField] private Animator deer;
+    [SerializeField] private Animator door;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -16,6 +19,15 @@ public class triiger_svintus_eat : MonoBehaviour
             _camAN.SetActive(true);
             svin.CrossFade("svin_eat", 0, 0);
             deer.CrossFade("deer_fall", 0, 0);
+            door.CrossFade("door_open_svin", 0, 0);
+            Invoke(nameof(before), 16);
         }
+    }
+
+    private void before()
+    {
+        Player.SetActive(true);
+        SvinRun.SetActive(true);
+        _camAN.SetActive(false);
     }
 }
