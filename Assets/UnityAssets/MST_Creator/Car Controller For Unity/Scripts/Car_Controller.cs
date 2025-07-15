@@ -583,15 +583,15 @@ public class Car_Controller : MonoBehaviour
     }
     
     [SerializeField] private AudioSource minuscar;
-    void OnTriggerEnter(Collider other) //плохая концовка
-    {
-        if(other.CompareTag("Player"))
-        {
-            StartCoroutine(SmoothStop());
-            minuscar.Play();
-            svintys.SetActive(true);
-        }
-    }
+    //void OnTriggerEnter(Collider other) //плохая концовка
+    //{
+        //if(other.CompareTag("Player"))
+        //{
+            //StartCoroutine(SmoothStop());
+            //minuscar.Play();
+            //svintys.SetActive(true);
+        //}
+    //}
 
     IEnumerator SmoothStop()
     {
@@ -609,5 +609,31 @@ public class Car_Controller : MonoBehaviour
             yield return null;
         }
         Brakes = 0f;
+    }
+    
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            // Полная остановка всех колес
+            foreach(var wheel in Front_Wheels)
+            {
+                wheel.motorTorque = 0;
+                wheel.brakeTorque = Mathf.Infinity;
+            }
+            foreach(var wheel in Back_Wheels)
+            {
+                wheel.motorTorque = 0;
+                wheel.brakeTorque = Mathf.Infinity;
+            }
+        
+            // Остановка физики
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        
+            // Дополнительные эффекты
+            minuscar.Play();
+            svintys.SetActive(true);
+        }
     }
 }
