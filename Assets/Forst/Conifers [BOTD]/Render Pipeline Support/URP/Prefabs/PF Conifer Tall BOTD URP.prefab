@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4033964170994324}
   - component: {fileID: 33553830683910954}
   - component: {fileID: 23309444090733188}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Conifer Tall BOTD LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 4657980456482902}
   - component: {fileID: 33559743796376114}
   - component: {fileID: 23933673824694470}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Conifer Tall BOTD LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4925666623870900}
   - component: {fileID: 227004396696467460}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Conifer Tall BOTD Billboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,8 +261,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4534264641828652}
   - component: {fileID: 205477677417311662}
-  - component: {fileID: 136397860403507302}
-  m_Layer: 0
+  - component: {fileID: 6105362026093145172}
+  - component: {fileID: -5867415005623330064}
+  m_Layer: 7
   m_Name: PF Conifer Tall BOTD URP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,8 +315,8 @@ LODGroup:
     renderers:
     - renderer: {fileID: 227004396696467460}
   m_Enabled: 1
---- !u!136 &136397860403507302
-CapsuleCollider:
+--- !u!65 &6105362026093145172
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -332,8 +333,26 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.25
-  m_Height: 6
-  m_Direction: 1
-  m_Center: {x: 0, y: 2.5, z: 0}
+  serializedVersion: 3
+  m_Size: {x: 1, y: 4.443121, z: 1}
+  m_Center: {x: 0, y: 1.7215599, z: 0}
+--- !u!114 &-5867415005623330064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743353957770956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff

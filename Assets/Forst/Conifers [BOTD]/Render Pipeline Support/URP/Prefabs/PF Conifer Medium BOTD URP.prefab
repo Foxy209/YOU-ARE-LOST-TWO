@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4071390273635838}
   - component: {fileID: 205829865164112152}
-  m_Layer: 0
+  - component: {fileID: -6037493812774924116}
+  m_Layer: 7
   m_Name: PF Conifer Medium BOTD URP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,6 +63,26 @@ LODGroup:
     renderers:
     - renderer: {fileID: 227131698251642430}
   m_Enabled: 1
+--- !u!114 &-6037493812774924116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214657917099862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1487772876627174
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4285550008755934}
   - component: {fileID: 227131698251642430}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Conifer Medium BOTD Billboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +171,7 @@ GameObject:
   - component: {fileID: 4312538407058960}
   - component: {fileID: 33257530108043278}
   - component: {fileID: 23436335641026108}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Conifer Medium BOTD LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +258,7 @@ GameObject:
   - component: {fileID: 4740200127204918}
   - component: {fileID: 33779992140741664}
   - component: {fileID: 23942989677910610}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Conifer Medium BOTD LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

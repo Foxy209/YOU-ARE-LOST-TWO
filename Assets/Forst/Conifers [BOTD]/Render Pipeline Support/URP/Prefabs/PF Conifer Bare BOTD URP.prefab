@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4033964170994324}
   - component: {fileID: 33553830683910954}
   - component: {fileID: 23309444090733188}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Conifer Bare BOTD LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 4657980456482902}
   - component: {fileID: 33559743796376114}
   - component: {fileID: 23933673824694470}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Conifer Bare BOTD LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4925666623870900}
   - component: {fileID: 227004396696467460}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Conifer Bare BOTD Billboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,8 @@ GameObject:
   - component: {fileID: 4534264641828652}
   - component: {fileID: 205477677417311662}
   - component: {fileID: 136397860403507302}
-  m_Layer: 0
+  - component: {fileID: 7121744804554245224}
+  m_Layer: 7
   m_Name: PF Conifer Bare BOTD URP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,3 +338,20 @@ CapsuleCollider:
   m_Height: 6
   m_Direction: 1
   m_Center: {x: 0, y: 2.5, z: 0}
+--- !u!114 &7121744804554245224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743353957770956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_Size: {x: 0.5732155, y: 5.9478436, z: 0.3464956}
+  m_Center: {x: -0.032072663, y: 2.4739218, z: 0.061692014}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
