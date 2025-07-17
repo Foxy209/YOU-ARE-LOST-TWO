@@ -60,6 +60,16 @@ namespace EvolveGames
         bool WallDistance;
         [HideInInspector] public float WalkingValue;
         
+        [Header("Stamina Settings")]
+        [SerializeField] private bool useStaminaSystem = false; 
+        [SerializeField] private float maxStamina = 100f; 
+        [SerializeField] private float currentStamina = 100f; 
+        [SerializeField] private float staminaDrainRate = 15f; 
+        [SerializeField] private float staminaRegenRate = 10f; 
+        [SerializeField] private float minStaminaToRun = 20f; 
+        [SerializeField] private float exhaustedSpeedPenalty = 0.5f;
+        private bool isExhausted = false;
+        
 
         void Start()
         {
@@ -73,6 +83,7 @@ namespace EvolveGames
             InstallFOV = cam.fieldOfView;
             RunningValue = runningSpeed;
             WalkingValue = walkingSpeed;
+            currentStamina = maxStamina;
         }
 
         void Update()
@@ -144,6 +155,48 @@ namespace EvolveGames
                     transform.TransformDirection(Vector3.forward), HideDistance, LayerMaskInt);
                 Items.ani.SetBool("Hide", WallDistance);
                 Items.DefiniteHide = WallDistance;
+            }
+            
+            if (useStaminaSystem)
+            {
+                HandleStamina();
+            }
+            isRunning = !isCrough ? (CanRunning ? Input.GetKey(KeyCode.LeftShift) && !isExhausted : false) : false;
+        }
+        
+        private void HandleStamina()
+        {
+            if (isRunning && Moving && characterController.isGrounded)
+            {
+               
+                currentStamina -= staminaDrainRate * Time.deltaTime;
+                currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina);
+        
+                if (currentStamina <= 0)
+                {
+                    isExhausted = true;
+                }
+            }
+            else
+            {
+                
+                currentStamina += staminaRegenRate * Time.deltaTime;
+                currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina);
+        
+                if (currentStamina >= minStaminaToRun)
+                {
+                    isExhausted = false;
+                }
+            }
+
+            
+            if (isExhausted)
+            {
+                RunningValue = walkingSpeed * exhaustedSpeedPenalty;
+            }
+            else
+            {
+                RunningValue = Mathf.Lerp(RunningValue, runningSpeed, timeToRunning * Time.deltaTime);
             }
         }
 
