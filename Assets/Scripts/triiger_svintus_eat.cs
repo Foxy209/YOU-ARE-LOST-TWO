@@ -15,6 +15,9 @@ public class triiger_svintus_eat : MonoBehaviour
     [SerializeField] private Animator svin;
     [SerializeField] private Animator deer;
     [SerializeField] private Animator door;
+    
+    [SerializeField] private AudioClip clip;
+    [SerializeField] private AudioSource sour_change;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -41,5 +44,7 @@ public class triiger_svintus_eat : MonoBehaviour
         SvinRun.SetActive(true);
         SvinEat.SetActive(false);
         _camAN.SetActive(false);
+        sour_change.clip = clip;
+        sour_change.Play();
     }
 }

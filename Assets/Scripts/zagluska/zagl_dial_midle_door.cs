@@ -11,7 +11,7 @@ public class zagl_dial_midle_door : MonoBehaviour
 
     private void Update()
     {
-        if (Panel == false)
+        if (Panel.activeSelf == false)
         {
             triggerE.SetActive(true);
             door_close.SetActive(false);
