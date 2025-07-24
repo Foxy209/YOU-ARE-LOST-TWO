@@ -21,9 +21,9 @@ public class zagl_scene_svin_before : MonoBehaviour
             else
             {
                 svin.SetActive(false);
-                Destroy(gameObject);
                 sour_change.clip = clip;
                 sour_change.Play();
+                Destroy(gameObject);
             }
         }
     }
