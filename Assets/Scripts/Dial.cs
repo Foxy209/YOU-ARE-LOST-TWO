@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using DG.Tweening;
 using EvolveGames;
 using TMPro;
 using UnityEngine;
@@ -26,11 +27,11 @@ public class Dial : MonoBehaviour
     public AudioClip[] txtsndF {set{txtsnd = value;}}
     public void Strdial()
     {
-        disapr.gameObject.GetComponent<Disapr>().Strfade();
         StartCoroutine(nameof(Dialog));
     }
     IEnumerator Dialog()
     {
+        yield return disapr.gameObject.GetComponent<Image>().DOFade(0,2);
         dialtxt.text = null;
         spkrtxt.text = null;
         yield return new WaitForSeconds(0.5f);
