@@ -29,6 +29,7 @@ public class trigger_svin_tower : MonoBehaviour
         sour_change.Play();
         _svR.transform.position = _spwS.transform.position;
         _pl_next.transform.position = _spwP.transform.position;
+        _pl_next.transform.rotation = _spwP.transform.rotation;
         _pl_next.SetActive(true);
         _svR.SetActive(true);
         _svA.SetActive(false);
