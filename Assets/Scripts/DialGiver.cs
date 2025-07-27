@@ -23,12 +23,8 @@ public class DialGiver : MonoBehaviour
     {
         if(!isdlcompl) 
         {
-            dialpan.GetComponent<Dial>().spkrimgsF = spkrigs;
-            dialpan.GetComponent<Dial>().spkrnamsF = spkrnms;
-            dialpan.GetComponent<Dial>().spkrtxtsF = spkrxts;
-            dialpan.GetComponent<Dial>().txtsndF = txtsnds;
             dialpan.SetActive(true);
-            dialpan.GetComponent<Dial>().Strdial();
+            StartCoroutine(dialpan.GetComponent<Dial>().Dialog(spkrnms, spkrxts, spkrigs, txtsnds));
         }
     }
     private void OnTriggerEnter(Collider other)

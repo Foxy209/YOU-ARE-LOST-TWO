@@ -4,6 +4,7 @@ using DG.Tweening;
 using EvolveGames;
 using TMPro;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 public class Dial : MonoBehaviour
 {
@@ -17,35 +18,23 @@ public class Dial : MonoBehaviour
     [SerializeField] private AudioSource aud;
     [SerializeField] private Image spkrim;
     [SerializeField] private Image disapr;
-    [SerializeField] private Sprite[] spkrimgs;
-    public Sprite[] spkrimgsF {set{spkrimgs = value;}}
-    [SerializeField] private string[] spkrnams;
-    public string[] spkrnamsF {set{spkrnams = value;}}
-    [SerializeField] private string[] spkrtxts;
-    public string[] spkrtxtsF {set{spkrtxts = value;}}
-    [SerializeField] private AudioClip[] txtsnd;
-    public AudioClip[] txtsndF {set{txtsnd = value;}}
-    public void Strdial()
-    {
-        StartCoroutine(nameof(Dialog));
-    }
-    IEnumerator Dialog()
+    public IEnumerator Dialog(string[] names, string[] texts, Sprite[] images, AudioClip[] sounds)
     {
         yield return disapr.gameObject.GetComponent<Image>().DOFade(0,2);
         dialtxt.text = null;
         spkrtxt.text = null;
         yield return new WaitForSeconds(0.5f);
-        spkrim.sprite = spkrimgs[0];
+        spkrim.sprite = images[0];
         spkrim.gameObject.SetActive(true);
         yield return new WaitForSeconds(0.5f);
-        foreach (string i in spkrtxts)
+        foreach (string i in texts)
         {
-            spkrim.sprite = spkrimgs[Array.IndexOf(spkrtxts, i)];
-            spkrtxt.text = spkrnams[Array.IndexOf(spkrtxts, i)];
+            spkrim.sprite = images[Array.IndexOf(texts, i)];
+            spkrtxt.text = names[Array.IndexOf(texts, i)];
             dialtxt.text = null;
             foreach(char a in i)
             {
-                aud.PlayOneShot(txtsnd[Array.IndexOf(spkrtxts, i)]);
+                aud.PlayOneShot(sounds[Array.IndexOf(texts, i)]);
                 dialtxt.text += a; 
                 yield return new WaitForSeconds(0.1f);
             }
