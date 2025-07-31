@@ -12,10 +12,7 @@ public class zagl_scene_house : MonoBehaviour
 
     private void Update()
     {
-        Invoke(nameof(end), 20);
         Invoke(nameof(firstdoor), 5);
-        Invoke(nameof(twodoor), 18);
-        Invoke(nameof(mesd), 10);
     }
 
     private void mesd()
@@ -26,16 +23,20 @@ public class zagl_scene_house : MonoBehaviour
     private void mesdTWO()
     {
         mesdu_vlom.Play();
+        Invoke(nameof(twodoor), 6);
     }
     
     
     private void firstdoor()
     {
         first_door.Play();
+        Invoke(nameof(mesd), 5);
+        
     }
     private void twodoor()
     {
         two_door.Play();
+        Invoke(nameof(end), 2);
     }
     
     
