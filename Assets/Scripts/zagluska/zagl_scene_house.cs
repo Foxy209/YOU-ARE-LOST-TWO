@@ -12,33 +12,9 @@ public class zagl_scene_house : MonoBehaviour
 
     private void Update()
     {
-        Invoke(nameof(firstdoor), 5);
+        Invoke(nameof(end), 20);
     }
 
-    private void mesd()
-    {
-        mesdu_vlom.Play();
-        Invoke(nameof(mesdTWO), 2);
-    }
-    private void mesdTWO()
-    {
-        mesdu_vlom.Play();
-        Invoke(nameof(twodoor), 6);
-    }
-    
-    
-    private void firstdoor()
-    {
-        first_door.Play();
-        Invoke(nameof(mesd), 5);
-        
-    }
-    private void twodoor()
-    {
-        two_door.Play();
-        Invoke(nameof(end), 2);
-    }
-    
     
     private void end()
     {
