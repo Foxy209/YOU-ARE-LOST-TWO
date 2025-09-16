@@ -6,13 +6,15 @@ public class Trigger_smert_ot_svin : MonoBehaviour
     [SerializeField] private GameObject svinAI;
     [SerializeField] private GameObject svinEAT;
     [SerializeField] private GameObject pl;
-    [SerializeField] private GameObject zagl;
+    [SerializeField] private GameObject zaglONE;
+    [SerializeField] private GameObject zaglTWO;
     [SerializeField] private GameObject ui;
+    public bool smertTWO = false;
 
 
     private void OnTriggerEnter(Collider other)
     {
-        if (CompareTag("FPSPlayer"))
+        if (other.CompareTag("FPSPlayer"))
         {
             svinAI.SetActive(false);
             pl.SetActive(false);
@@ -23,7 +25,17 @@ public class Trigger_smert_ot_svin : MonoBehaviour
 
     private void zz()
     {
-        zagl.SetActive(true);
-        ui.SetActive(true);
+        if (smertTWO)
+        {
+            zaglTWO.SetActive(true);
+            ui.SetActive(true);
+        }
+        else
+        {
+            zaglONE.SetActive(true);
+            ui.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 }
