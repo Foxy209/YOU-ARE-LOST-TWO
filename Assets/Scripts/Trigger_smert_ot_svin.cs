@@ -29,6 +29,8 @@ public class Trigger_smert_ot_svin : MonoBehaviour
         {
             zaglTWO.SetActive(true);
             ui.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
         else
         {

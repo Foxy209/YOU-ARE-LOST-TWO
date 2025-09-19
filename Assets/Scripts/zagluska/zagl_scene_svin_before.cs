@@ -8,6 +8,7 @@ public class zagl_scene_svin_before : MonoBehaviour
     [SerializeField] private bool wall;
     [SerializeField] private AudioClip clip;
     [SerializeField] private AudioSource sour_change;
+    public Trigger_smert_ot_svin smena;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -20,6 +21,7 @@ public class zagl_scene_svin_before : MonoBehaviour
             }
             else
             {
+                smena.smertTWO = true;
                 svin.SetActive(false);
                 sour_change.clip = clip;
                 sour_change.Play();

@@ -18,8 +18,6 @@ public class cheking_restarting : MonoBehaviour
     [SerializeField] private GameObject svin;
 
     [SerializeField] private GameObject smer_svin1;
-    [SerializeField] private GameObject car_end1;
-    [SerializeField] private GameObject car_end2;
     [SerializeField] private GameObject hunt;
     
     
@@ -40,5 +38,35 @@ public class cheking_restarting : MonoBehaviour
             Cursor.visible = false;
             check.SetActive(false);
         }   
+        if (zagl_svin2.activeSelf)
+        {
+            pl1.transform.position = zagl_svin2.transform.position;
+            svin.transform.position = svinTR2.transform.position;
+            pl1.SetActive(true);
+            svin.SetActive(true);
+            smer_svin1.SetActive(false);
+            zagl_svin2.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            check.SetActive(false);
+        }
+        if (car1.activeSelf)
+        {
+            car.transform.position = car1.transform.position;
+            car.SetActive(true);
+            car1.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            check.SetActive(false);
+        }
+        if (car2.activeSelf)
+        {
+            car.transform.position = car2.transform.position;
+            car.SetActive(true);
+            car1.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            check.SetActive(false);
+        }
     }
 }
