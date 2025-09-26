@@ -7,22 +7,27 @@ public class Monolog_act : MonoBehaviour
     [SerializeField] private TMP_Text show_txt;
     [SerializeField] private string txt;
     [SerializeField] private int Taimer;
+    [SerializeField] private string tag;
 
     [SerializeField] private bool need_sound;
     [SerializeField] private AudioSource svuk;
 
-    [SerializeField] private bool need_obj;
+    [SerializeField] private bool need_obj_act;
     [SerializeField] private GameObject act;
+    [SerializeField] private bool need_obj_disb;
     [SerializeField] private GameObject disb;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("FPSPlayer"))
+        if (other.CompareTag(tag))
         {
             show_txt.text = txt;
-            if (need_obj)
+            if (need_obj_act)
             {
                 act.SetActive(true);
+            }
+            if (need_obj_disb)
+            {
                 disb.SetActive(false);
             }
 
