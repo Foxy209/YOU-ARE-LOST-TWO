@@ -1102,11 +1102,11 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 13.693451
+  DopplerLevel: 1.49
+  MinDistance: 2.88
+  MaxDistance: 20
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -1114,23 +1114,41 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
+      time: 0.14400001
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: -6.9472313
+      outSlope: -6.9472313
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.3713359
+      value: 0.61213684
+      inSlope: -1.7368078
+      outSlope: -1.7368078
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.6702078
+      value: 0.4475708
+      inSlope: -0.43420196
+      outSlope: -0.43420196
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     - serializedVersion: 3
       time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
+      value: 0.14400001
+      inSlope: -0.14405772
+      outSlope: -0.14405772
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -1154,7 +1172,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.7861111
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1485,7 +1503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 1
-  size: {x: 1300.8601, y: 44.557976, z: 2003.01}
+  size: {x: 1300.8599, y: 44.557976, z: 2003.01}
   overrideRendererFilters: 0
   minRendererVolumeSize: 0.1
   objectLayerMask:
@@ -1525,7 +1543,7 @@ Transform:
   m_GameObject: {fileID: 240843324}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 618.75665, y: 2.6289883, z: -0.000061035156}
+  m_LocalPosition: {x: 618.75653, y: 2.6289883, z: -0.000061035156}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2172,6 +2190,91 @@ Transform:
   - {fileID: 1866398022}
   m_Father: {fileID: 1112633490}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &428730274
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 428730275}
+  - component: {fileID: 428730278}
+  - component: {fileID: 428730277}
+  - component: {fileID: 428730276}
+  m_Layer: 0
+  m_Name: mon_hav_slep
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &428730275
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428730274}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.65287393, z: -0, w: 0.7574666}
+  m_LocalPosition: {x: 204.8, y: 4.8993664, z: 76.8}
+  m_LocalScale: {x: -3.040003, y: -13.422932, z: -41.791145}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1276203670}
+  m_LocalEulerAnglesHint: {x: 0, y: -81.517, z: 0}
+--- !u!114 &428730276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428730274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 725698ed464291f46ad430e427694454, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  show_txt: {fileID: 4817130091635566825}
+  txt: Ugh, I'm so tired
+  Taimer: 4
+  tag: Player
+  need_sound: 0
+  svuk: {fileID: 0}
+  need_obj_act: 0
+  act: {fileID: 0}
+  need_obj_disb: 0
+  disb: {fileID: 0}
+--- !u!65 &428730277
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428730274}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &428730278
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428730274}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &431157095
 GameObject:
   m_ObjectHideFlags: 0
@@ -2485,21 +2588,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 489295655}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b43f6a0448c2ae469aba4281b655a82, type: 3}
+  m_Script: {fileID: 11500000, guid: 725698ed464291f46ad430e427694454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Smena_Soundtrack: 0
-  _source_SoundTrack: {fileID: 0}
-  clip: {fileID: 0}
-  Vrubit_sound: 1
-  _source_Sound: {fileID: 57567111}
-  Tag: FPSPlayer
-  need_Taimer: 1
+  show_txt: {fileID: 4817130091635566825}
+  txt: Fuck!
   Taimer: 2
-  ENBgm: 0
-  DISgm: 0
-  eng_GM: {fileID: 1301712184}
-  did_GM: {fileID: 0}
+  tag: FPSPlayer
+  need_sound: 1
+  svuk: {fileID: 57567111}
+  need_obj_act: 0
+  act: {fileID: 0}
+  need_obj_disb: 0
+  disb: {fileID: 0}
 --- !u!82 &490656718 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 8050068204116869865, guid: 18fbb15e08e14304bb5a880fa3b01210,
@@ -8981,6 +9082,68 @@ Transform:
   m_Children: []
   m_Father: {fileID: 683239707}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1168903213
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1168903214}
+  - component: {fileID: 1168903216}
+  - component: {fileID: 1168903215}
+  m_Layer: 0
+  m_Name: trigger_cutscene_end
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1168903214
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168903213}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.3826837, z: -0, w: 0.9238795}
+  m_LocalPosition: {x: 185.07312, y: 5.7483625, z: 620.7224}
+  m_LocalScale: {x: 30.892, y: 16.645, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1728943561}
+  m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
+--- !u!65 &1168903215
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168903213}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1168903216
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168903213}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!65 &1186956311
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9291,8 +9454,97 @@ Transform:
   - {fileID: 1162551678}
   - {fileID: 1383301402}
   - {fileID: 1210090545}
+  - {fileID: 2099010089}
+  - {fileID: 1276738696}
+  - {fileID: 428730275}
+  - {fileID: 1904912661}
   m_Father: {fileID: 1728943561}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1276738695
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1276738696}
+  - component: {fileID: 1276738699}
+  - component: {fileID: 1276738698}
+  - component: {fileID: 1276738697}
+  m_Layer: 0
+  m_Name: mon_motel_before_dial2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1276738696
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276738695}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.71152616, z: -0, w: 0.70265967}
+  m_LocalPosition: {x: 173.78, y: 4.2, z: 448.83}
+  m_LocalScale: {x: -0.98286337, y: -4.6926765, z: -3.670723}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1276203670}
+  m_LocalEulerAnglesHint: {x: 0, y: 90.718, z: 0}
+--- !u!114 &1276738697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276738695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 725698ed464291f46ad430e427694454, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  show_txt: {fileID: 4817130091635566825}
+  txt: Another day, another dollar. Well, at least let me get some food
+  Taimer: 5
+  tag: FPSPlayer
+  need_sound: 0
+  svuk: {fileID: 0}
+  need_obj_act: 0
+  act: {fileID: 0}
+  need_obj_disb: 0
+  disb: {fileID: 0}
+--- !u!65 &1276738698
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276738695}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1276738699
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276738695}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1283322149
 GameObject:
   m_ObjectHideFlags: 0
@@ -9498,12 +9750,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297788720}
   m_Mesh: {fileID: 5423731134757305092, guid: bd8d6c0e6fc61bd4687ab01955932fa1, type: 3}
---- !u!1 &1301712184 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2279989026356812178, guid: a6bb215526e98d74f9de99d995251dbe,
-    type: 3}
-  m_PrefabInstance: {fileID: 5349594941333335560}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1302239870
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19630,6 +19876,7 @@ Transform:
   - {fileID: 371464842}
   - {fileID: 1129391060}
   - {fileID: 1276203670}
+  - {fileID: 1168903214}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1736428959
@@ -20781,6 +21028,7 @@ MonoBehaviour:
   - {fileID: 5349594941333335562}
   - {fileID: 304313009}
   - {fileID: 1683858359}
+  - {fileID: 1276738695}
   disabl:
   - {fileID: 5349594941333335563}
   - {fileID: 1755857067}
@@ -21059,6 +21307,91 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.6, y: 2.6, z: 1.3}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1904912660
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1904912661}
+  - component: {fileID: 1904912664}
+  - component: {fileID: 1904912663}
+  - component: {fileID: 1904912662}
+  m_Layer: 0
+  m_Name: mon_see_motel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1904912661
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904912660}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0103149135, y: 0.70340407, z: 0.010459863, w: 0.71063846}
+  m_LocalPosition: {x: 202.51746, y: 3.5800507, z: 363.8732}
+  m_LocalScale: {x: -3.040003, y: -13.422932, z: -41.791145}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1276203670}
+  m_LocalEulerAnglesHint: {x: -0.003, y: -270.586, z: 1.683}
+--- !u!114 &1904912662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904912660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 725698ed464291f46ad430e427694454, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  show_txt: {fileID: 4817130091635566825}
+  txt: Oh, perfect, a motel
+  Taimer: 3
+  tag: Player
+  need_sound: 0
+  svuk: {fileID: 0}
+  need_obj_act: 0
+  act: {fileID: 0}
+  need_obj_disb: 0
+  disb: {fileID: 0}
+--- !u!65 &1904912663
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904912660}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1904912664
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904912660}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1952480308
 GameObject:
   m_ObjectHideFlags: 0
@@ -21666,6 +21999,91 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5349594941333335560}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2099010088
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2099010089}
+  - component: {fileID: 2099010092}
+  - component: {fileID: 2099010091}
+  - component: {fileID: 2099010090}
+  m_Layer: 0
+  m_Name: mon_motel_before_dial1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2099010089
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099010088}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.71152616, z: -0, w: 0.70265967}
+  m_LocalPosition: {x: 157.61, y: 2.03, z: 460.03}
+  m_LocalScale: {x: -0.98286337, y: -4.6926765, z: -3.670723}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1276203670}
+  m_LocalEulerAnglesHint: {x: 0, y: 90.718, z: 0}
+--- !u!114 &2099010090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099010088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 725698ed464291f46ad430e427694454, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  show_txt: {fileID: 4817130091635566825}
+  txt: In all my 3 years working here, this is the first time I'm seeing this motel
+  Taimer: 6
+  tag: FPSPlayer
+  need_sound: 0
+  svuk: {fileID: 0}
+  need_obj_act: 0
+  act: {fileID: 0}
+  need_obj_disb: 0
+  disb: {fileID: 0}
+--- !u!65 &2099010091
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099010088}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &2099010092
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099010088}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &2117173739
 GameObject:
   m_ObjectHideFlags: 0
@@ -23444,9 +23862,19 @@ PrefabInstance:
       objectReference: {fileID: 4434987454584885907}
     - target: {fileID: 7202291908784502239, guid: a6bb215526e98d74f9de99d995251dbe,
         type: 3}
+      propertyPath: dopOns.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7202291908784502239, guid: a6bb215526e98d74f9de99d995251dbe,
+        type: 3}
       propertyPath: 'dopOns.Array.data[0]'
       value: 
       objectReference: {fileID: 759199558}
+    - target: {fileID: 7202291908784502239, guid: a6bb215526e98d74f9de99d995251dbe,
+        type: 3}
+      propertyPath: 'dopOns.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2099010088}
     - target: {fileID: 7579504706774708987, guid: a6bb215526e98d74f9de99d995251dbe,
         type: 3}
       propertyPath: m_LocalPosition.z
