@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class zagl_trig_end_prolog : MonoBehaviour
 {
@@ -19,6 +20,6 @@ public class zagl_trig_end_prolog : MonoBehaviour
 
    private void end()
    {
-      
+      SceneManager.LoadScene("forest");
    }
 }
