@@ -1565,7 +1565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 1
-  size: {x: 1300.8601, y: 44.557976, z: 2003.01}
+  size: {x: 1300.8599, y: 44.557976, z: 2003.01}
   overrideRendererFilters: 0
   minRendererVolumeSize: 0.1
   objectLayerMask:
@@ -1605,7 +1605,7 @@ Transform:
   m_GameObject: {fileID: 240843324}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 618.75665, y: 2.6289883, z: -0.000061035156}
+  m_LocalPosition: {x: 618.75653, y: 2.6289883, z: -0.000061035156}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8729,6 +8729,91 @@ Transform:
   m_Children: []
   m_Father: {fileID: 371464842}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1001259427
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1001259428}
+  - component: {fileID: 1001259431}
+  - component: {fileID: 1001259430}
+  - component: {fileID: 1001259429}
+  m_Layer: 0
+  m_Name: mon_motel_two_etash
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1001259428
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001259427}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.9995055, z: -0, w: -0.03144427}
+  m_LocalPosition: {x: 168.31, y: 10.37, z: 454.66}
+  m_LocalScale: {x: -0.98286337, y: -4.6926765, z: -3.670723}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1276203670}
+  m_LocalEulerAnglesHint: {x: 0, y: 183.604, z: 0}
+--- !u!114 &1001259429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001259427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 725698ed464291f46ad430e427694454, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  show_txt: {fileID: 4817130091635566825}
+  txt: I have no reason to go there
+  Taimer: 3
+  tag: FPSPlayer
+  need_sound: 0
+  svuk: {fileID: 0}
+  need_obj_act: 0
+  act: {fileID: 0}
+  need_obj_disb: 0
+  disb: {fileID: 0}
+--- !u!65 &1001259430
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001259427}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1001259431
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001259427}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1006297637
 GameObject:
   m_ObjectHideFlags: 0
@@ -10143,6 +10228,7 @@ Transform:
   - {fileID: 2099010089}
   - {fileID: 1276738696}
   - {fileID: 428730275}
+  - {fileID: 1001259428}
   - {fileID: 1904912661}
   m_Father: {fileID: 1728943561}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
