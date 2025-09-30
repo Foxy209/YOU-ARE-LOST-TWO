@@ -10,6 +10,7 @@ public class TriggersOnTheMap : MonoBehaviour
     [SerializeField] private Vector3 PlayerRotation;
     [SerializeField] private bool enableplayer = true;
     [SerializeField] private GameObject zatem;
+    [SerializeField] private bool enabl_wall = false;
     [SerializeField] private GameObject block_wall;
     [SerializeField] private AudioSource sound;
     [SerializeField] private bool DoYouNeedToChangeClip;
@@ -35,11 +36,22 @@ public class TriggersOnTheMap : MonoBehaviour
         ObjectToDisable.transform.position = ObjectToEnable.transform.position;
         ObjectToDisable.transform.rotation = ObjectToEnable.transform.rotation;
         ObjectToEnable.SetActive(true);
-        //block_wall.SetActive(true);
         if (DoYouNeedToChangeClip)
         {
                 sour.clip = clip;
                 sour.Play();
+        }
+
+        if (enabl_wall)
+        {
+            if (block_wall.activeSelf)
+            {
+                block_wall.SetActive(false);
+            }
+            else
+            {
+                block_wall.SetActive(true);
+            }
         }
     }
 }
