@@ -9,6 +9,7 @@ public class cheking_restarting : MonoBehaviour
     [SerializeField] private GameObject svinTR2;
     [SerializeField] private GameObject car1;
     [SerializeField] private GameObject car2;
+    [SerializeField] private GameObject car_scen;
     [SerializeField] private GameObject hunter;
     
     
@@ -55,6 +56,7 @@ public class cheking_restarting : MonoBehaviour
             car.transform.position = car1.transform.position;
             car.SetActive(true);
             car1.SetActive(false);
+            car_scen.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             check.SetActive(false);
@@ -63,7 +65,8 @@ public class cheking_restarting : MonoBehaviour
         {
             car.transform.position = car2.transform.position;
             car.SetActive(true);
-            car1.SetActive(false);
+            car2.SetActive(false);
+            car_scen.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             check.SetActive(false);
