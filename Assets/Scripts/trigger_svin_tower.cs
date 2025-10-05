@@ -10,6 +10,7 @@ public class trigger_svin_tower : MonoBehaviour
     [SerializeField] private GameObject _pl_next;
     [SerializeField] private GameObject _spwP;
     [SerializeField] private GameObject _spwS;
+    [SerializeField] private GameObject wall;
     [SerializeField] private AudioClip clip;
     [SerializeField] private AudioSource sour_change;
     private void OnTriggerEnter(Collider other)
@@ -33,6 +34,7 @@ public class trigger_svin_tower : MonoBehaviour
         _pl_next.SetActive(true);
         _svR.SetActive(true);
         _svA.SetActive(false);
+        wall.SetActive(true);
         
     }
 }

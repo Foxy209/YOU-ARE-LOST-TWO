@@ -1565,7 +1565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 1
-  size: {x: 1300.8599, y: 44.557976, z: 2003.01}
+  size: {x: 1300.8601, y: 44.557983, z: 2003.01}
   overrideRendererFilters: 0
   minRendererVolumeSize: 0.1
   objectLayerMask:
@@ -1605,7 +1605,7 @@ Transform:
   m_GameObject: {fileID: 240843324}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 618.75653, y: 2.6289883, z: -0.000061035156}
+  m_LocalPosition: {x: 618.75665, y: 2.628992, z: -0.000061035156}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7513,6 +7513,91 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 683239706}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &705702650
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 705702651}
+  - component: {fileID: 705702654}
+  - component: {fileID: 705702653}
+  - component: {fileID: 705702652}
+  m_Layer: 0
+  m_Name: mon_motel_before_pepsi
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &705702651
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705702650}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.9995055, z: -0, w: -0.03144427}
+  m_LocalPosition: {x: 163.68, y: 2.55, z: 459.87}
+  m_LocalScale: {x: -13.263831, y: -3.584253, z: -14.652382}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1276203670}
+  m_LocalEulerAnglesHint: {x: 0, y: 183.604, z: 0}
+--- !u!114 &705702652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705702650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 725698ed464291f46ad430e427694454, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  show_txt: {fileID: 4817130091635566825}
+  txt: Alright, time for the last delivery
+  Taimer: 4
+  tag: FPSPlayer
+  need_sound: 0
+  svuk: {fileID: 0}
+  need_obj_act: 0
+  act: {fileID: 0}
+  need_obj_disb: 0
+  disb: {fileID: 0}
+--- !u!65 &705702653
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705702650}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &705702654
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705702650}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!65 &719447507
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7677,7 +7762,7 @@ Transform:
   m_GameObject: {fileID: 757220641}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.30112624, z: -0, w: 0.9535844}
-  m_LocalPosition: {x: -11.22, y: -3.711, z: 14.93}
+  m_LocalPosition: {x: -11.22, y: -3.711, z: 15.57}
   m_LocalScale: {x: 0.9512686, y: 4.4607882, z: 2.0195694}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10229,6 +10314,7 @@ Transform:
   - {fileID: 1276738696}
   - {fileID: 428730275}
   - {fileID: 1001259428}
+  - {fileID: 705702651}
   - {fileID: 1904912661}
   m_Father: {fileID: 1728943561}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -22467,11 +22553,11 @@ MonoBehaviour:
   tagtouse: FPSPlayer
   spkrigs:
   - {fileID: 21300000, guid: d317368df147a5589838a0d27a5774fa, type: 3}
-  - {fileID: 21300000, guid: c728c31ca6adf8f459fd5aa90c28a7b1, type: 3}
+  - {fileID: 21300000, guid: c187b88e6ad7e3743b963faa1dd65e6c, type: 3}
   - {fileID: 21300000, guid: d317368df147a5589838a0d27a5774fa, type: 3}
-  - {fileID: 21300000, guid: c728c31ca6adf8f459fd5aa90c28a7b1, type: 3}
+  - {fileID: 21300000, guid: c187b88e6ad7e3743b963faa1dd65e6c, type: 3}
   - {fileID: 21300000, guid: d317368df147a5589838a0d27a5774fa, type: 3}
-  - {fileID: 21300000, guid: c728c31ca6adf8f459fd5aa90c28a7b1, type: 3}
+  - {fileID: 21300000, guid: c187b88e6ad7e3743b963faa1dd65e6c, type: 3}
   - {fileID: 21300000, guid: d317368df147a5589838a0d27a5774fa, type: 3}
   spkrnms:
   - Cashier
@@ -22505,6 +22591,7 @@ MonoBehaviour:
   dopOffs:
   - {fileID: 371464841}
   - {fileID: 1166704746}
+  - {fileID: 1550678319}
 --- !u!65 &1902602886
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23463,7 +23550,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   show_txt: {fileID: 4817130091635566825}
-  txt: In all my 3 years working here, this is the first time I'm seeing this motel
+  txt: In all my 2 years working here, this is the first time I'm seeing this motel
   Taimer: 6
   tag: FPSPlayer
   need_sound: 0
@@ -26060,9 +26147,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 134138577352145967, guid: 73d15eb28bc90434da780d50edf14ea3,
         type: 3}
+      propertyPath: enabl.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 134138577352145967, guid: 73d15eb28bc90434da780d50edf14ea3,
+        type: 3}
       propertyPath: 'enabl.Array.data[0]'
       value: 
       objectReference: {fileID: 679298139}
+    - target: {fileID: 134138577352145967, guid: 73d15eb28bc90434da780d50edf14ea3,
+        type: 3}
+      propertyPath: 'enabl.Array.data[1]'
+      value: 
+      objectReference: {fileID: 705702650}
     - target: {fileID: 837989747506637644, guid: 73d15eb28bc90434da780d50edf14ea3,
         type: 3}
       propertyPath: m_IsActive
@@ -27471,6 +27568,18 @@ PrefabInstance:
       propertyPath: 'dopOns.Array.data[0]'
       value: 
       objectReference: {fileID: 757220641}
+    - target: {fileID: 4223427676108079601, guid: a6bb215526e98d74f9de99d995251dbe,
+        type: 3}
+      propertyPath: 'spkrigs.Array.data[1]'
+      value: 
+      objectReference: {fileID: 21300000, guid: c187b88e6ad7e3743b963faa1dd65e6c,
+        type: 3}
+    - target: {fileID: 4223427676108079601, guid: a6bb215526e98d74f9de99d995251dbe,
+        type: 3}
+      propertyPath: 'spkrigs.Array.data[3]'
+      value: 
+      objectReference: {fileID: 21300000, guid: c187b88e6ad7e3743b963faa1dd65e6c,
+        type: 3}
     - target: {fileID: 4270247561552631567, guid: a6bb215526e98d74f9de99d995251dbe,
         type: 3}
       propertyPath: m_Convex
@@ -27480,6 +27589,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Motel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736897000153920170, guid: a6bb215526e98d74f9de99d995251dbe,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736897000153920170, guid: a6bb215526e98d74f9de99d995251dbe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 4983835913200006820, guid: a6bb215526e98d74f9de99d995251dbe,
         type: 3}
@@ -27536,6 +27655,24 @@ PrefabInstance:
       propertyPath: 'dopOns.Array.data[1]'
       value: 
       objectReference: {fileID: 2099010088}
+    - target: {fileID: 7202291908784502239, guid: a6bb215526e98d74f9de99d995251dbe,
+        type: 3}
+      propertyPath: 'spkrigs.Array.data[0]'
+      value: 
+      objectReference: {fileID: 21300000, guid: c187b88e6ad7e3743b963faa1dd65e6c,
+        type: 3}
+    - target: {fileID: 7202291908784502239, guid: a6bb215526e98d74f9de99d995251dbe,
+        type: 3}
+      propertyPath: 'spkrigs.Array.data[2]'
+      value: 
+      objectReference: {fileID: 21300000, guid: c187b88e6ad7e3743b963faa1dd65e6c,
+        type: 3}
+    - target: {fileID: 7202291908784502239, guid: a6bb215526e98d74f9de99d995251dbe,
+        type: 3}
+      propertyPath: 'spkrigs.Array.data[4]'
+      value: 
+      objectReference: {fileID: 21300000, guid: c187b88e6ad7e3743b963faa1dd65e6c,
+        type: 3}
     - target: {fileID: 7579504706774708987, guid: a6bb215526e98d74f9de99d995251dbe,
         type: 3}
       propertyPath: m_LocalPosition.z
