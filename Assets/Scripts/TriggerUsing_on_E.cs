@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class TriggerUsing_on_E : MonoBehaviour
