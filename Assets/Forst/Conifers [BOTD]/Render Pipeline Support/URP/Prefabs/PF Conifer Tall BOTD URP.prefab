@@ -270,7 +270,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4534264641828652}
   - component: {fileID: 205477677417311662}
-  - component: {fileID: 6105362026093145172}
   - component: {fileID: -5867415005623330064}
   m_Layer: 7
   m_Name: PF Conifer Tall BOTD URP
@@ -324,27 +323,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 227004396696467460}
   m_Enabled: 1
---- !u!65 &6105362026093145172
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1743353957770956}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 18.885519, z: 1}
-  m_Center: {x: 0, y: 8.942758, z: 0}
 --- !u!114 &-5867415005623330064
 MonoBehaviour:
   m_ObjectHideFlags: 0
