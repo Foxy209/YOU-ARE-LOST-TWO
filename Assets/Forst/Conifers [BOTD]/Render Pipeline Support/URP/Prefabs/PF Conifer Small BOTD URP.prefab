@@ -89,6 +89,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1301127155260102
 GameObject:
@@ -169,6 +170,7 @@ BillboardRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Billboard: {fileID: 22600000, guid: 234e107afda138b4f9ea67290d8f598e, type: 2}
 --- !u!1 &1364922359172550
 GameObject:
@@ -181,6 +183,7 @@ GameObject:
   - component: {fileID: 4689083990643298}
   - component: {fileID: 205709636835153214}
   - component: {fileID: -1869635327791166554}
+  - component: {fileID: 7700113578099173248}
   m_Layer: 7
   m_Name: PF Conifer Small BOTD URP
   m_TagString: Untagged
@@ -213,7 +216,7 @@ LODGroup:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1364922359172550}
-  serializedVersion: 2
+  serializedVersion: 3
   m_LocalReferencePoint: {x: 0, y: 4.5167003, z: 0}
   m_Size: 9.458596
   m_FadeMode: 0
@@ -233,6 +236,7 @@ LODGroup:
     renderers:
     - renderer: {fileID: 227092337440914680}
   m_Enabled: 1
+  m_GlobalIlluminationLOD: 0
 --- !u!114 &-1869635327791166554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,12 +251,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SerializedVersion: 0
   m_OverrideArea: 1
-  m_Area: 1
+  m_Area: 0
   m_OverrideGenerateLinks: 0
   m_GenerateLinks: 0
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!136 &7700113578099173248
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364922359172550}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.10657441
+  m_Height: 5.3601613
+  m_Direction: 1
+  m_Center: {x: 0.0045030713, y: 2.1800807, z: -0.045578904}
 --- !u!1 &1500231203828324
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,4 +369,5 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
