@@ -40906,8 +40906,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1905639253670244029, guid: 18fbb15e08e14304bb5a880fa3b01210,
         type: 3}
+      propertyPath: Motor_Torque
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1905639253670244029, guid: 18fbb15e08e14304bb5a880fa3b01210,
+        type: 3}
       propertyPath: Car_Start_Key
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1905639253670244029, guid: 18fbb15e08e14304bb5a880fa3b01210,
+        type: 3}
+      propertyPath: Maximum_Speed
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1905639253670244029, guid: 18fbb15e08e14304bb5a880fa3b01210,
         type: 3}
