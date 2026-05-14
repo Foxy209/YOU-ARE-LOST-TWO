@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class zagl_bad_end_prolog : MonoBehaviour
 {
     [SerializeField] private GameObject UI;
@@ -25,14 +25,11 @@ public class zagl_bad_end_prolog : MonoBehaviour
 
     private void resp()
     {
-        car.transform.position = start_toch.transform.position;
-        car.transform.rotation = start_toch.transform.rotation;
-        light.SetActive(true);
         Invoke(nameof(off), 1);
     }
 
     private void off()
     {
-        UI.SetActive(false);
+        SceneManager.LoadScene("Game");
     }
 }

@@ -1642,7 +1642,7 @@ MonoBehaviour:
   version: 2
   globalVolume: 0
   mode: 1
-  size: {x: 1300.8601, y: 44.557976, z: 2003.01}
+  size: {x: 1300.8601, y: 44.557983, z: 2003.01}
   overrideRendererFilters: 0
   minRendererVolumeSize: 0.1
   objectLayerMask:
@@ -1680,7 +1680,7 @@ Transform:
   m_GameObject: {fileID: 240843324}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 618.75665, y: 2.6289883, z: -0.000061035156}
+  m_LocalPosition: {x: 618.75665, y: 2.628992, z: -0.000061035156}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7565,7 +7565,7 @@ MonoBehaviour:
   block_wall: {fileID: 290647316}
   sound: {fileID: 679298141}
   DoYouNeedToChangeClip: 1
-  clip: {fileID: 8300000, guid: ed3f07a8cea71c64396a849f868fc165, type: 3}
+  clip: {fileID: 8300000, guid: b1dd60f1643f6fd489c2a6b43cd2772f, type: 3}
   sour: {fileID: 490656718}
 --- !u!65 &679298143
 BoxCollider:
@@ -7842,6 +7842,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8050068204116869865, guid: 18fbb15e08e14304bb5a880fa3b01210,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.653
       objectReference: {fileID: 0}
     - target: {fileID: 8050068204116869865, guid: 18fbb15e08e14304bb5a880fa3b01210,
         type: 3}
@@ -26457,9 +26462,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: ff58c2c0279217f478aba27e04154ce8, type: 3}
+  m_Resource: {fileID: 8300000, guid: 8e8e497d422ba584e8eed02993c671fe, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.207
   m_Pitch: 1
   Loop: 1
   Mute: 0
