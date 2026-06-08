@@ -27,6 +27,8 @@ public class Shotgun : MonoBehaviour
     [Header("Система патронов")]
     [SerializeField] private ShotgunAmmo ammoSystem;
 
+    [Header("Анимация оружия")]
+    [SerializeField] private WeaponAnimator weaponAnimator;
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -43,7 +45,15 @@ public class Shotgun : MonoBehaviour
     {
         if (muzzleFlash != null) muzzleFlash.Play();
         if (shotSound != null) shotSound.Play();
+        
+        if (weaponAnimator != null) 
+            weaponAnimator.PlayShotEffect();
 
+        // Вспышка и звук
+        if (muzzleFlash != null) muzzleFlash.Play();
+        if (shotSound != null) shotSound.Play();
+
+        
         for (int i = 0; i < pellets; i++)
         {
             Vector3 dir = GetSpreadDirection();

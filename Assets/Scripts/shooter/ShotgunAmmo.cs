@@ -75,7 +75,7 @@ public class ShotgunAmmo : MonoBehaviour
         if (ammoText == null) return;
 
         if (isReloading)
-            ammoText.text = $"ПЕРЕЗАРЯДКА {currentShells}/{maxShells}";
+            ammoText.text = $"RELOAD {currentShells}/{maxShells}";
         else
             ammoText.text = $"{currentShells} / ∞";
     }

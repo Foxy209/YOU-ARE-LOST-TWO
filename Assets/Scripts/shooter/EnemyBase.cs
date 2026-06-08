@@ -4,20 +4,19 @@ using System.Collections;
 using System.Collections.Generic;
 public class EnemyBase : MonoBehaviour, IDamageable, IKnockbackable, ISprayBlood
 {
-      [Header("Здоровье")]
+     [Header("Здоровье")]
     [SerializeField] private float maxHealth = 100f;
     private float currentHealth;
 
     [Header("Кровь")]
     [SerializeField] private ParticleSystem bloodSprayPrefab;
-    [SerializeField] private GameObject bloodDecalPrefab; // декаль для стен
 
     [Header("Отбрасывание")]
     [SerializeField] private float stunTime = 0.5f;
 
-    [Header("Ragdoll")]
+    [Header("Компоненты")]
     [SerializeField] private Animator anim;
-    [SerializeField] private Collider mainCollider; // основной коллайдер врага
+    [SerializeField] private Collider mainCollider;
 
     private NavMeshAgent agent;
     private Rigidbody mainRigidbody;
@@ -28,6 +27,7 @@ public class EnemyBase : MonoBehaviour, IDamageable, IKnockbackable, ISprayBlood
     private Vector3 pendingKnockbackForce;
     private bool hasPendingKnockback;
     private bool knockbackAppliedThisFrame;
+    private bool ragdollEnabled;
 
     void Start()
     {
@@ -35,14 +35,17 @@ public class EnemyBase : MonoBehaviour, IDamageable, IKnockbackable, ISprayBlood
         agent = GetComponent<NavMeshAgent>();
         mainRigidbody = GetComponent<Rigidbody>();
 
-        // Собираем все Rigidbody с костей (ragdoll)
+        if (anim == null) anim = GetComponent<Animator>();
+        if (mainCollider == null) mainCollider = GetComponent<Collider>();
+
+        // Собираем все Rigidbody с костей
         Rigidbody[] allRbs = GetComponentsInChildren<Rigidbody>();
         foreach (Rigidbody rb in allRbs)
         {
             if (rb != mainRigidbody)
             {
                 ragdollRigidbodies.Add(rb);
-                rb.isKinematic = true; // в жизни — анимируются
+                rb.isKinematic = true;
             }
         }
 
@@ -53,7 +56,7 @@ public class EnemyBase : MonoBehaviour, IDamageable, IKnockbackable, ISprayBlood
             if (col != mainCollider)
             {
                 ragdollColliders.Add(col);
-                col.enabled = false; // в жизни — только основной коллайдер
+                col.enabled = false;
             }
         }
 
@@ -83,9 +86,9 @@ public class EnemyBase : MonoBehaviour, IDamageable, IKnockbackable, ISprayBlood
     {
         if (agent != null) agent.enabled = false;
 
-        // Если живой — используем основной Rigidbody
         if (!isDead)
         {
+            // Живой — толкаем основной Rigidbody
             if (mainRigidbody != null)
             {
                 mainRigidbody.isKinematic = false;
@@ -99,10 +102,8 @@ public class EnemyBase : MonoBehaviour, IDamageable, IKnockbackable, ISprayBlood
         }
         else
         {
-            // Если мёртвый — сила уходит в голову или таз (куда попали)
+            // Мёртвый — включаем регдолл и толкаем
             EnableRagdoll();
-
-            // Даём кадр на включение физики костей
             StartCoroutine(ApplyForceToRagdollNextFrame(pendingKnockbackForce));
             pendingKnockbackForce = Vector3.zero;
         }
@@ -110,13 +111,15 @@ public class EnemyBase : MonoBehaviour, IDamageable, IKnockbackable, ISprayBlood
 
     IEnumerator ApplyForceToRagdollNextFrame(Vector3 force)
     {
-        yield return null; // ждём кадр, чтобы регдолл включился
+        yield return null;
 
-        // Находим ближайшую кость к точке попадания или просто бьём в таз
-        Rigidbody targetBone = ragdollRigidbodies.Count > 0 ? ragdollRigidbodies[0] : null;
-        if (targetBone != null)
+        // Толкаем ВСЕ кости регдолла для надёжности
+        foreach (Rigidbody rb in ragdollRigidbodies)
         {
-            targetBone.AddForce(force, ForceMode.Impulse);
+            if (rb != null)
+            {
+                rb.AddForce(force * 0.3f, ForceMode.Impulse); // делим силу на все кости
+            }
         }
 
         StartCoroutine(DisableAfterDelay(5f));
@@ -143,29 +146,41 @@ public class EnemyBase : MonoBehaviour, IDamageable, IKnockbackable, ISprayBlood
         if (isDead) return;
         isDead = true;
 
-        if (anim != null) anim.enabled = false; // ОТКЛЮЧАЕМ АНИМАТОР
+        if (anim != null) anim.enabled = false;
         if (agent != null) agent.enabled = false;
+
+        // Основной коллайдер НЕ отключаем сразу!
+        // Он ещё нужен, пока ragdoll не включится
+    }
+
+    void EnableRagdoll()
+    {
+        if (ragdollEnabled) return;
+        ragdollEnabled = true;
 
         // Отключаем основной коллайдер и Rigidbody
         if (mainCollider != null) mainCollider.enabled = false;
         if (mainRigidbody != null)
         {
             mainRigidbody.isKinematic = true;
-            mainRigidbody.constraints = RigidbodyConstraints.FreezeAll;
+            mainRigidbody.detectCollisions = false;
         }
-    }
 
-    void EnableRagdoll()
-    {
-        // Включаем все коллайдеры и Rigidbody на костях
+        // Включаем все кости
         foreach (Rigidbody rb in ragdollRigidbodies)
         {
-            rb.isKinematic = false;
-            rb.linearVelocity = Vector3.zero;
+            if (rb != null)
+            {
+                rb.isKinematic = false;
+                rb.linearVelocity = Vector3.zero;
+            }
         }
         foreach (Collider col in ragdollColliders)
         {
-            col.enabled = true;
+            if (col != null)
+            {
+                col.enabled = true;
+            }
         }
     }
 
@@ -199,19 +214,11 @@ public class EnemyBase : MonoBehaviour, IDamageable, IKnockbackable, ISprayBlood
 
     public void SprayBlood(Vector3 hitPoint, Vector3 hitNormal)
     {
-        // Партиклы крови
         if (bloodSprayPrefab != null)
         {
             ParticleSystem blood = Instantiate(bloodSprayPrefab, hitPoint, Quaternion.LookRotation(hitNormal));
             blood.Play();
             Destroy(blood.gameObject, 1.5f);
-        }
-
-        // Декаль крови на стене/полу
-        if (bloodDecalPrefab != null)
-        {
-            GameObject decal = Instantiate(bloodDecalPrefab, hitPoint + hitNormal * 0.02f, Quaternion.LookRotation(-hitNormal));
-            Destroy(decal, 15f);
         }
     }
 }
