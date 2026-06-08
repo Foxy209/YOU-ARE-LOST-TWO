@@ -4,13 +4,13 @@ using System.Collections;
 public class WeaponAnimator : MonoBehaviour
 {
     [Header("Позиция оружия")]
-    [SerializeField] private Transform weaponModel; // сама модель дробовика
+    [SerializeField] private Transform weaponModel; 
 
     [Header("Отдача при выстреле")]
-    [SerializeField] private float recoilBack = 0.08f;   // отдача назад
-    [SerializeField] private float recoilUp = 0.03f;     // отдача вверх
-    [SerializeField] private float recoilSpeed = 8f;     // скорость отдачи
-    [SerializeField] private float returnSpeed = 5f;     // скорость возврата
+    [SerializeField] private float recoilBack = 0.08f;   
+    [SerializeField] private float recoilUp = 0.03f;     
+    [SerializeField] private float recoilSpeed = 8f;     
+    [SerializeField] private float returnSpeed = 5f;     
 
     [Header("Тряска камеры")]
     [SerializeField] private Camera playerCamera;
@@ -32,7 +32,7 @@ public class WeaponAnimator : MonoBehaviour
 
     void Update()
     {
-        // Плавный возврат оружия
+        
         if (weaponModel != null)
         {
             weaponModel.localPosition = Vector3.SmoothDamp(
@@ -46,13 +46,13 @@ public class WeaponAnimator : MonoBehaviour
 
     public void PlayShotEffect()
     {
-        // Отдача оружия
+       
         if (weaponModel != null)
         {
             weaponModel.localPosition = weaponStartPos + new Vector3(0, recoilUp, -recoilBack);
         }
 
-        // Тряска камеры
+       
         if (playerCamera != null)
         {
             StartCoroutine(CameraShake());

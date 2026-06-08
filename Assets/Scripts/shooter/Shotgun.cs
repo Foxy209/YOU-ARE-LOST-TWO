@@ -49,7 +49,7 @@ public class Shotgun : MonoBehaviour
         if (weaponAnimator != null) 
             weaponAnimator.PlayShotEffect();
 
-        // Вспышка и звук
+       
         if (muzzleFlash != null) muzzleFlash.Play();
         if (shotSound != null) shotSound.Play();
 

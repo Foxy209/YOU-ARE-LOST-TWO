@@ -38,7 +38,7 @@ public class EnemyBase : MonoBehaviour, IDamageable, IKnockbackable, ISprayBlood
         if (anim == null) anim = GetComponent<Animator>();
         if (mainCollider == null) mainCollider = GetComponent<Collider>();
 
-        // Собираем все Rigidbody с костей
+        
         Rigidbody[] allRbs = GetComponentsInChildren<Rigidbody>();
         foreach (Rigidbody rb in allRbs)
         {
@@ -49,7 +49,7 @@ public class EnemyBase : MonoBehaviour, IDamageable, IKnockbackable, ISprayBlood
             }
         }
 
-        // Собираем все коллайдеры с костей
+        
         Collider[] allCols = GetComponentsInChildren<Collider>();
         foreach (Collider col in allCols)
         {
@@ -88,7 +88,7 @@ public class EnemyBase : MonoBehaviour, IDamageable, IKnockbackable, ISprayBlood
 
         if (!isDead)
         {
-            // Живой — толкаем основной Rigidbody
+           
             if (mainRigidbody != null)
             {
                 mainRigidbody.isKinematic = false;
@@ -102,7 +102,7 @@ public class EnemyBase : MonoBehaviour, IDamageable, IKnockbackable, ISprayBlood
         }
         else
         {
-            // Мёртвый — включаем регдолл и толкаем
+            
             EnableRagdoll();
             StartCoroutine(ApplyForceToRagdollNextFrame(pendingKnockbackForce));
             pendingKnockbackForce = Vector3.zero;
@@ -113,12 +113,12 @@ public class EnemyBase : MonoBehaviour, IDamageable, IKnockbackable, ISprayBlood
     {
         yield return null;
 
-        // Толкаем ВСЕ кости регдолла для надёжности
+        
         foreach (Rigidbody rb in ragdollRigidbodies)
         {
             if (rb != null)
             {
-                rb.AddForce(force * 0.3f, ForceMode.Impulse); // делим силу на все кости
+                rb.AddForce(force * 0.3f, ForceMode.Impulse); 
             }
         }
 
@@ -149,8 +149,7 @@ public class EnemyBase : MonoBehaviour, IDamageable, IKnockbackable, ISprayBlood
         if (anim != null) anim.enabled = false;
         if (agent != null) agent.enabled = false;
 
-        // Основной коллайдер НЕ отключаем сразу!
-        // Он ещё нужен, пока ragdoll не включится
+       
     }
 
     void EnableRagdoll()
@@ -158,7 +157,7 @@ public class EnemyBase : MonoBehaviour, IDamageable, IKnockbackable, ISprayBlood
         if (ragdollEnabled) return;
         ragdollEnabled = true;
 
-        // Отключаем основной коллайдер и Rigidbody
+        
         if (mainCollider != null) mainCollider.enabled = false;
         if (mainRigidbody != null)
         {
@@ -166,7 +165,7 @@ public class EnemyBase : MonoBehaviour, IDamageable, IKnockbackable, ISprayBlood
             mainRigidbody.detectCollisions = false;
         }
 
-        // Включаем все кости
+       
         foreach (Rigidbody rb in ragdollRigidbodies)
         {
             if (rb != null)
