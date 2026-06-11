@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 public class EnemyBase : MonoBehaviour, IDamageable, IKnockbackable, ISprayBlood
 {
-     [Header("Здоровье")]
+    [Header("Здоровье")]
     [SerializeField] private float maxHealth = 100f;
     private float currentHealth;
 
@@ -29,6 +29,11 @@ public class EnemyBase : MonoBehaviour, IDamageable, IKnockbackable, ISprayBlood
     private bool knockbackAppliedThisFrame;
     private bool ragdollEnabled;
 
+    // Статический слой для трупов (один на всех)
+    private static int deadBodyLayer = -1;
+
+    public static System.Action OnAnyEnemyKilled;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -38,7 +43,7 @@ public class EnemyBase : MonoBehaviour, IDamageable, IKnockbackable, ISprayBlood
         if (anim == null) anim = GetComponent<Animator>();
         if (mainCollider == null) mainCollider = GetComponent<Collider>();
 
-        
+        // Собираем Rigidbody с костей
         Rigidbody[] allRbs = GetComponentsInChildren<Rigidbody>();
         foreach (Rigidbody rb in allRbs)
         {
@@ -49,7 +54,7 @@ public class EnemyBase : MonoBehaviour, IDamageable, IKnockbackable, ISprayBlood
             }
         }
 
-        
+        // Собираем коллайдеры с костей
         Collider[] allCols = GetComponentsInChildren<Collider>();
         foreach (Collider col in allCols)
         {
@@ -88,7 +93,6 @@ public class EnemyBase : MonoBehaviour, IDamageable, IKnockbackable, ISprayBlood
 
         if (!isDead)
         {
-           
             if (mainRigidbody != null)
             {
                 mainRigidbody.isKinematic = false;
@@ -102,7 +106,6 @@ public class EnemyBase : MonoBehaviour, IDamageable, IKnockbackable, ISprayBlood
         }
         else
         {
-            
             EnableRagdoll();
             StartCoroutine(ApplyForceToRagdollNextFrame(pendingKnockbackForce));
             pendingKnockbackForce = Vector3.zero;
@@ -113,12 +116,11 @@ public class EnemyBase : MonoBehaviour, IDamageable, IKnockbackable, ISprayBlood
     {
         yield return null;
 
-        
         foreach (Rigidbody rb in ragdollRigidbodies)
         {
             if (rb != null)
             {
-                rb.AddForce(force * 0.3f, ForceMode.Impulse); 
+                rb.AddForce(force * 0.3f, ForceMode.Impulse);
             }
         }
 
@@ -128,17 +130,12 @@ public class EnemyBase : MonoBehaviour, IDamageable, IKnockbackable, ISprayBlood
     public void TakeDamage(float amount)
     {
         if (isDead) return;
-
         currentHealth -= amount;
 
         if (currentHealth <= 0)
-        {
             Die();
-        }
         else if (anim != null)
-        {
             anim.SetTrigger("Hurt");
-        }
     }
 
     void Die()
@@ -146,10 +143,10 @@ public class EnemyBase : MonoBehaviour, IDamageable, IKnockbackable, ISprayBlood
         if (isDead) return;
         isDead = true;
 
+        OnAnyEnemyKilled?.Invoke();
+
         if (anim != null) anim.enabled = false;
         if (agent != null) agent.enabled = false;
-
-       
     }
 
     void EnableRagdoll()
@@ -165,7 +162,17 @@ public class EnemyBase : MonoBehaviour, IDamageable, IKnockbackable, ISprayBlood
             mainRigidbody.detectCollisions = false;
         }
 
-       
+        
+        if (deadBodyLayer == -1)
+        {
+            deadBodyLayer = LayerMask.NameToLayer("DeadBody");
+            if (deadBodyLayer == -1)
+            {
+                Debug.LogError("EnemyBase: создай слой 'DeadBody' в Edit → Project Settings → Tags and Layers!");
+            }
+        }
+
+        
         foreach (Rigidbody rb in ragdollRigidbodies)
         {
             if (rb != null)
@@ -179,8 +186,12 @@ public class EnemyBase : MonoBehaviour, IDamageable, IKnockbackable, ISprayBlood
             if (col != null)
             {
                 col.enabled = true;
+                col.gameObject.layer = deadBodyLayer;
             }
         }
+
+        
+        gameObject.layer = deadBodyLayer;
     }
 
     IEnumerator RecoverFromKnockback()
