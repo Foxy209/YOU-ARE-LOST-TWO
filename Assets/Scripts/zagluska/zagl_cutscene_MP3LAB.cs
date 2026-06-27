@@ -21,10 +21,10 @@ public class zagl_cutscene_MP3LAB : MonoBehaviour
       pl.transform.position = tp.transform.position;
       pl.transform.rotation = tp.transform.rotation;
       pl.SetActive(true);
-      Destroy(tp);
       sour_change.clip = clip;
       sour_change.Play();
       
       monsters.SetActive(true);
+      Destroy(gameObject);
    }
 }

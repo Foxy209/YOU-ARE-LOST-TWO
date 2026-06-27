@@ -11,10 +11,11 @@ public class PCon : MonoBehaviour
     [SerializeField] private GameObject zastavka;
     [SerializeField] private GameObject cctv;
     [SerializeField] private GameObject cctvUI;
-    [SerializeField] private GameObject light;
     [SerializeField] private GameObject DoorSTAT1;
     [SerializeField] private GameObject DoorSTAT2;
     [SerializeField] private GameObject DoorANIM;
+    [SerializeField] private AudioClip clip;
+    [SerializeField] private AudioSource sour_change;
 
     private void Update()
     {
@@ -28,6 +29,9 @@ public class PCon : MonoBehaviour
         }
         else
         {
+            sour_change.clip = clip;
+            sour_change.Play();
+            cctv.SetActive(true);
             Invoke(nameof(cams), timeCams);    
         }
     }
