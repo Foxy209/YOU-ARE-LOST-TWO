@@ -24,7 +24,7 @@ public class trigg_WallBreake : MonoBehaviour
     {
         if (triggered) return;
 
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("FPSPlayer"))
         {
             triggered = true;
             StartCoroutine(BreakWall());
