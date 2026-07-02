@@ -9,7 +9,7 @@ public class trigg_WallBreake : MonoBehaviour
     [SerializeField] private float blockForce = 15f;
     [SerializeField] private float blockUpForce = 3f;
     [SerializeField] private float blockSpread = 2f;
-    [SerializeField] private float disableCollidersDelay = 0.3f; // через сколько отключить коллайдеры
+    [SerializeField] private float disableCollidersDelay = 0.3f; 
 
     [Header("Монстр")]
     [SerializeField] private GameObject monster;
@@ -35,7 +35,7 @@ public class trigg_WallBreake : MonoBehaviour
     {
         if (breakSound != null) breakSound.Play();
 
-        // Разбрасываем блоки
+       
         foreach (Rigidbody rb in wallBlocks)
         {
             if (rb != null)
@@ -51,7 +51,7 @@ public class trigg_WallBreake : MonoBehaviour
             }
         }
 
-        // Через небольшое время отключаем коллайдеры на блоках
+        
         yield return new WaitForSeconds(disableCollidersDelay);
 
         foreach (Rigidbody rb in wallBlocks)
@@ -60,11 +60,11 @@ public class trigg_WallBreake : MonoBehaviour
             {
                 Collider col = rb.GetComponent<Collider>();
                 if (col != null)
-                    col.enabled = false; // отключаем коллайдер
+                    col.enabled = false;
             }
         }
 
-        // Ждём и выпускаем монстра
+        
         yield return new WaitForSeconds(monsterRunDelay - disableCollidersDelay);
 
         if (monster != null)
@@ -79,11 +79,5 @@ public class trigg_WallBreake : MonoBehaviour
         }
 
         gameObject.SetActive(false);
-    }
-
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position, transform.localScale);
     }
 }

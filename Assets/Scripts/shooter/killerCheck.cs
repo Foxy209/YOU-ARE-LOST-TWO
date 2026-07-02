@@ -29,7 +29,7 @@ public class killerCheck : MonoBehaviour
             pl.transform.position = tp.transform.position;
             pl.transform.rotation = tp.transform.rotation;
             if (cc != null) cc.enabled = true;
-            
+            EnemyBase.DestroyAllEnemies();
             OnAllEnemiesKilled?.Invoke();
         }
     }

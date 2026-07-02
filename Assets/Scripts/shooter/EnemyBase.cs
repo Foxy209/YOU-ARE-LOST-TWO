@@ -28,14 +28,16 @@ public class EnemyBase : MonoBehaviour, IDamageable, IKnockbackable, ISprayBlood
     private bool hasPendingKnockback;
     private bool knockbackAppliedThisFrame;
     private bool ragdollEnabled;
-
-    // Статический слой для трупов (один на всех)
+    
+    
     private static int deadBodyLayer = -1;
 
     public static System.Action OnAnyEnemyKilled;
 
+    public static List<EnemyBase> AllEnemies = new List<EnemyBase>();
     void Start()
     {
+        AllEnemies.Add(this);
         currentHealth = maxHealth;
         agent = GetComponent<NavMeshAgent>();
         mainRigidbody = GetComponent<Rigidbody>();
@@ -140,9 +142,10 @@ public class EnemyBase : MonoBehaviour, IDamageable, IKnockbackable, ISprayBlood
 
     void Die()
     {
+        
         if (isDead) return;
         isDead = true;
-
+        AllEnemies.Remove(this);
         OnAnyEnemyKilled?.Invoke();
 
         if (anim != null) anim.enabled = false;
@@ -230,5 +233,14 @@ public class EnemyBase : MonoBehaviour, IDamageable, IKnockbackable, ISprayBlood
             blood.Play();
             Destroy(blood.gameObject, 1.5f);
         }
+    }
+    public static void DestroyAllEnemies()
+    {
+        foreach (EnemyBase enemy in AllEnemies)
+        {
+            if (enemy != null)
+                Destroy(enemy.gameObject);
+        }
+        AllEnemies.Clear();
     }
 }
