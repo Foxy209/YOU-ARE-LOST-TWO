@@ -13,7 +13,6 @@ public class zagl_dial_mp3LAB : MonoBehaviour
         {
             pl.SetActive(false);
             cutscrnr.SetActive(true);
-            Destroy(gameObject);
         }
     }
 }

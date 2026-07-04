@@ -29,9 +29,20 @@ public class killerCheck : MonoBehaviour
             pl.transform.position = tp.transform.position;
             pl.transform.rotation = tp.transform.rotation;
             if (cc != null) cc.enabled = true;
-            EnemyBase.DestroyAllEnemies();
+            //EnemyBase.DestroyAllEnemies();
             OnAllEnemiesKilled?.Invoke();
+            Invoke(nameof(ClearAllBodies), 3f);
         }
+    }
+    
+    void ClearAllBodies()
+    {
+        EnemyBase[] enemies = FindObjectsOfType<EnemyBase>();
+        foreach (EnemyBase enemy in enemies)
+        {
+            Destroy(enemy.gameObject);
+        }
+        Debug.Log("Все трупы удалены");
     }
 
     void OnDestroy()

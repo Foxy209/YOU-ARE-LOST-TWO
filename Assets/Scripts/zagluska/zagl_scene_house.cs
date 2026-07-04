@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class zagl_scene_house : MonoBehaviour
 {
     [SerializeField] private GameObject pool;
@@ -21,5 +21,11 @@ public class zagl_scene_house : MonoBehaviour
         pool.SetActive(false);
         luke_under.SetActive(true);
         luke.SetActive(false);
+        Invoke(nameof(perenos), 2);
+    }
+
+    private void perenos()
+    {
+        SceneManager.LoadScene("lab");
     }
 }
