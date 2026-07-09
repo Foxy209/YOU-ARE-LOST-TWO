@@ -18,6 +18,8 @@ public class triiger_svintus_eat : MonoBehaviour
     
     [SerializeField] private AudioClip clip;
     [SerializeField] private AudioSource sour_change;
+    
+    [SerializeField] private MonoBehaviour carScript;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -29,6 +31,7 @@ public class triiger_svintus_eat : MonoBehaviour
             svin.CrossFade("svin_eat", 0, 0);
             deer.CrossFade("deer_fall", 0, 0);
             door.CrossFade("door_open_svin", 0, 0);
+            carScript.enabled = false;
             Invoke(nameof(before), 15);
         }
     }

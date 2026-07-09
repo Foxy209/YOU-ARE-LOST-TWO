@@ -8,14 +8,14 @@ public class zagl_music_endScene : MonoBehaviour
 
     private void Start()
     {
-        Invoke(nameof(titre), 25f);
+        Invoke(nameof(titre), 25);
     }
 
     private void titre()
     {
         sour_change.clip = clip;
         sour_change.Play();
-        Invoke(nameof(Inmeny), 25);
+        Invoke(nameof(Inmeny), 35);
     }
 
     private void Inmeny()
