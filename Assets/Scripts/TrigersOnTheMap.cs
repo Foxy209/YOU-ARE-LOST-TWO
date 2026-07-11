@@ -46,7 +46,7 @@ public class TriggersOnTheMap : MonoBehaviour
         {
             if (block_wall.activeSelf)
             {
-                block_wall.SetActive(false);
+                Destroy(block_wall);
             }
             else
             {
